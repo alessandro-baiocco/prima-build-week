@@ -12,6 +12,7 @@ body {
 
 header img {
   width: 155px;
+  padding-bottom: 40px;
 }
 
 footer form button {
@@ -27,16 +28,31 @@ footer form button {
 
 h1 {
   font-size: 80px;
-  line-height: 50px;
+  line-height: 60px;
   font-weight: 300;
+  margin-bottom: 45px;
 }
 
 li {
   line-height: 1.5;
+  font-weight: 300;
+}
+
+li strong {
+  font-weight: 500;
 }
 
 h2 {
   color: rgb(194, 18, 141);
+  font-size: 30px;
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+
+p {
+  margin-top: 0;
+  padding-bottom: 25px;
+  font-weight: 300;
 }
 
 footer {
