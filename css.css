@@ -52,3 +52,7 @@ footer {
   appearance: none;
   border: solid 2px white;
 }
+
+p {
+  margin-bottom: 40px;
+}
