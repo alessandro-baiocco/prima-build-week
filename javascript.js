@@ -8,3 +8,5 @@ scatolaCheck.onchange = function () {
     bottone.disabled = true;
   }
 };
+
+const noRefresh = (vaiAvanti) => vaiAvanti.preventDefault();
