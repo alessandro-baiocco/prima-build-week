@@ -84,3 +84,15 @@ footer {
   margin: 0px 6px;
   vertical-align: text-top;
 }
+
+.stars {
+  display: flex;
+}
+
+.star {
+  background-image: url(/assets/star.svg);
+  width: 45px;
+  height: 20px;
+  background-size: cover;
+  margin: 0px 6px;
+}
