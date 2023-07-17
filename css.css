@@ -86,6 +86,7 @@ footer {
 
 .stars {
   display: flex;
+  justify-content: center;
 }
 
 .star {
@@ -105,10 +106,6 @@ footer {
 .ratingP {
   text-align: center;
   font-size: 26px;
-}
-
-aside {
-  padding-inline: 12.5%;
 }
 
 .disabled {
