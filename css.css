@@ -1,4 +1,11 @@
 body {
   background-image: url(./assets/bg.jpg);
   background-repeat: no-repeat;
+  color: white;
+  padding-inline: 90px;
+  padding-block: 35px;
+}
+
+header img {
+  width: 155px;
 }
