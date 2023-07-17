@@ -90,9 +90,7 @@ footer {
 }
 
 .star {
-  background-image: url(/assets/star.svg);
-  width: 45px;
-  height: 20px;
+  height: 50px;
   background-size: cover;
   margin: 0px 6px;
 }
@@ -108,4 +106,8 @@ footer {
 .ratingP {
   text-align: center;
   font-size: 26px;
+}
+
+.disabled {
+  filter: invert(14%) sepia(32%) saturate(3193%) hue-rotate(244deg) brightness(86%) contrast(109%);
 }
