@@ -51,6 +51,7 @@ footer {
   color: black;
   border: solid 2px white;
   appearance: none;
+  margin: 0px 6px;
 }
 .check:checked {
   height: 20px;
@@ -59,4 +60,8 @@ footer {
   background: rgba(40, 40, 40, 0.2);
   color: black;
   border: solid 2px white;
+}
+
+.procedereAvanti {
+  cursor: pointer;
 }
