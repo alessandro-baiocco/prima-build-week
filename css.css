@@ -15,4 +15,10 @@ header img {
 
 footer form button {
   background-color: aqua;
+  margin-left: 200px;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  padding-block: 15px;
+  padding-inline: 50px;
 }
