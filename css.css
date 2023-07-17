@@ -66,5 +66,23 @@ footer {
   background: rgba(40, 40, 40, 0.2);
   color: black;
   appearance: none;
+}
+
+.check:not(.check:checked) {
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+  background: rgba(40, 40, 40, 0.2);
   border: solid 2px white;
+  appearance: none;
+  margin: 0px 6px;
+}
+
+.check:checked {
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+  background: rgba(40, 40, 40, 0.2);
+  border: solid 2px white;
+  margin: 0px 6px;
 }
