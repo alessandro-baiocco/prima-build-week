@@ -125,14 +125,14 @@ aside {
 }
 
 .feedbackInput {
-  width: 85%;
+  width: 82%;
   background-color: transparent;
   font-size: 17px;
   border-top: none;
-  border-bottom: 2px solid purple;
+  border-bottom: 2px solid rgb(194, 18, 141);
   border-inline: none;
   padding-bottom: 10px;
-  padding-left: 50px;
+  padding-left: 30px;
 }
 
 .feedbackButton {
