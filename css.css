@@ -33,6 +33,10 @@ h1 {
   margin-bottom: 45px;
 }
 
+ul {
+  padding-left: 30px;
+}
+
 li {
   line-height: 1.5;
   font-weight: 300;
