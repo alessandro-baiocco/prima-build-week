@@ -59,12 +59,25 @@ footer {
   margin-top: 70px;
 }
 
-.check {
+.check:not(.check:checked) {
   height: 20px;
   width: 20px;
   cursor: pointer;
   background: rgba(40, 40, 40, 0.2);
   color: black;
-  appearance: none;
   border: solid 2px white;
+  appearance: none;
+  margin: 0px 6px;
+}
+.check:checked {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  background: rgba(40, 40, 40, 0.2);
+  color: black;
+  border: solid 2px white;
+}
+
+.procedereAvanti {
+  cursor: pointer;
 }
