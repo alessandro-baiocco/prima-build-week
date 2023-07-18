@@ -83,14 +83,54 @@ const questions = [
   },
 ];
 //crea H1 random.
-let rand = Math.floor(Math.random() * questions.length);
-const h1 = document.querySelector("h1");
-h1.innerHTML = questions[rand].question;
-const bottoneUno = document.getElementById("primo");
-bottoneUno.innerHTML = questions[rand].correct_answer;
-const bottoneDue = document.getElementById("secondo");
-bottoneDue.innerHTML = questions[rand].incorrect_answers[0];
-const bottoneTre = document.getElementById("terzo");
-bottoneTre.innerHTML = questions[rand].incorrect_answers[1];
-const bottoneQuarto = document.getElementById("quarto");
-bottoneQuarto.innerHTML = questions[rand].incorrect_answers[2];
+
+const bottoniTutti = document.querySelectorAll("button");
+console.log(bottoniTutti);
+
+bottoniTutti.forEach((button, index1) => {
+  button.addEventListener("click", () => {
+    bottoniTutti.forEach((button, index2) => {
+      index1 !== index2 ? button.classList.remove("selected") : button.classList.toggle("selected");
+    });
+
+    console.log("clicked", index1);
+  });
+});
+
+let domandaRandom = () => {
+  let rand = Math.floor(Math.random() * questions.length);
+  const h1 = document.querySelector("h1");
+  h1.innerHTML = questions[rand].question;
+  const risposte = questions[rand].incorrect_answers;
+  risposte.push(questions[rand].correct_answer);
+  console.log("risposte:", risposte);
+  const bottoneUno = document.getElementById("primo");
+  bottoneUno.innerHTML = risposte[3];
+  const bottoneDue = document.getElementById("secondo");
+  bottoneDue.innerHTML = risposte[0];
+  const bottoneTre = document.getElementById("terzo");
+  bottoneTre.innerHTML = risposte[2];
+  const bottoneQuarto = document.getElementById("quarto");
+  bottoneQuarto.innerHTML = risposte[1];
+};
+
+domandaRandom();
+let time = 30;
+
+function myStopFunction() {
+  clearInterval(myInterval);
+}
+
+const myInterval = setInterval(updateCountdown, 1000);
+
+function updateCountdown() {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+
+  countdown.innerHTML = `${seconds}`;
+  time--;
+  if (time < 0) {
+    myStopFunction();
+  }
+}
+updateCountdown();
