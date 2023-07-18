@@ -171,7 +171,7 @@ input:focus {
   text-align: center;
   font-size: 40px;
   line-height: 100%;
-  margin-top: 100px;
+  margin-top: 40px;
 }
 
 .questionButton {
@@ -206,16 +206,18 @@ h3 {
 .nav {
   color: white;
   display: flex;
-
   flex-direction: column;
   flex-wrap: wrap;
   align-content: flex-end;
   align-items: center;
+  position: relative;
+  margin-right: 40px;
 }
 
 .timerSeconds {
   margin: 0;
   padding: 0;
+  font-size: 10px;
 }
 
 .unselected {
@@ -224,4 +226,15 @@ h3 {
 
 .selected {
   background-color: rgb(194, 18, 141);
+}
+
+.timerRemains {
+  font-size: 10px;
+}
+
+#countdown {
+  font-size: 40px;
+  padding: 0;
+  margin-bottom: 0;
+  font-weight: 500;
 }
