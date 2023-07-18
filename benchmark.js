@@ -89,12 +89,11 @@ h1.innerHTML=questions[rand].question;
 const risposte=questions[rand].incorrect_answers;
 risposte.push(questions[rand].correct_answer)
 console.log("risposte:",risposte);
-
-    const bottoneUno=document.getElementById("primo");
-    bottoneUno.innerHTML=risposte[3];
-    const bottoneDue=document.getElementById("secondo");
-    bottoneDue.innerHTML=risposte[0];
-    const bottoneTre=document.getElementById("terzo");
-    bottoneTre.innerHTML=risposte[2];
-    const bottoneQuarto=document.getElementById("quarto");
-    bottoneQuarto.innerHTML=risposte[1];
+const bottoneUno=document.getElementById("primo");
+bottoneUno.innerHTML=risposte[3];
+const bottoneDue=document.getElementById("secondo");
+bottoneDue.innerHTML=risposte[0];
+const bottoneTre=document.getElementById("terzo");
+bottoneTre.innerHTML=risposte[2];
+const bottoneQuarto=document.getElementById("quarto");
+bottoneQuarto.innerHTML=risposte[1];
