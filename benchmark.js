@@ -1,4 +1,3 @@
-console.log("ok");
 const questions = [
   {
     category: "Science: Computers",
@@ -82,24 +81,46 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
+// let selezionata = document.getElementsByClassName("selected")[0];
+// if (selezionata.innerHTML === questions[rand].correct_answer) {
+//   risposteGiuste++;
+//   console.log("giuste", risposteGiuste);
+// } else {
+//   risposteSbagliate++;
+//   console.log("sbagliato", risposteSbagliate);
+// }
 //crea H1 random.
+const questNumber = document.getElementById("changingNumber");
+let numberQuest = 1;
 
 const bottoniTutti = document.querySelectorAll("button");
-console.log(bottoniTutti[0]);
+
+// let selezionata = document.getElementsByClassName("selected")[0];
+// const egiusta = (click) => {
+// bottoniTutti.forEach((button, index1) => {
+//   button.addEventListener("click", () => {
+//   click.addEventListener("click" , ()) => {
+//     if (selezionata.innerHTML === questions[rand].correct_answer )
+//   }
+// }
+// if (index2.innerHTML === questions[rand].correct_answer) {
+//   console.log("funzi");
+// }
+
+let bottoni1 = document.getElementsByTagName("button")[0];
+let bottoni3 = document.getElementsByTagName("button")[2];
+let domandeUscite = [];
+let risposteGiuste = 0;
+let risposteSbagliate = 0;
 
 bottoniTutti.forEach((button, index1) => {
   button.addEventListener("click", () => {
     bottoniTutti.forEach((button, index2) => {
       index1 !== index2 ? button.classList.remove("selected") : button.classList.toggle("selected");
     });
-
-    console.log("clicked", index1);
+    console.log("clicked", index1, bottoniTutti);
   });
 });
-
-let bottoni1 = document.getElementsByTagName("button")[0];
-let bottoni3 = document.getElementsByTagName("button")[2];
-let domandeUscite = [];
 
 let domandaRandom = () => {
   let rand = Math.floor(Math.random() * questions.length);
@@ -108,7 +129,6 @@ let domandaRandom = () => {
     h1.innerHTML = questions[rand].question;
     const risposte = questions[rand].incorrect_answers;
     risposte.push(questions[rand].correct_answer);
-    console.log("risposte:", risposte);
     const bottoneUno = document.getElementById("primo");
     bottoneUno.innerHTML = risposte[3];
     const bottoneDue = document.getElementById("secondo");
@@ -128,6 +148,10 @@ let domandaRandom = () => {
       bottoni3.disabled = false;
     }
     domandeUscite.push(rand);
+    questNumber.innerText = numberQuest;
+    numberQuest++;
+    if (numberQuest === questions.length) {
+    }
   } else {
     domandaRandom();
   }
@@ -135,11 +159,7 @@ let domandaRandom = () => {
 domandaRandom();
 
 const countdown = document.getElementById("countdown");
-let time = 30;
-
-function myStopFunction() {
-  clearInterval(myInterval);
-}
+let time = 5;
 
 const myInterval = setInterval(updateCountdown, 1000);
 function updateCountdown() {
@@ -149,7 +169,8 @@ function updateCountdown() {
   time--;
 
   if (time === -1) {
-    time = 30;
+    time = 5;
     domandaRandom();
+    bottoniTutti.forEach((button, index1) => button.classList.remove("selected"));
   }
 }
