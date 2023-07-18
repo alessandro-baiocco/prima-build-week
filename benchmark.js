@@ -123,7 +123,7 @@ let domandaRandom = () => {
   if (bottoni3.innerText === "undefined") {
     bottoni3.disabled = true;
   } else {
-    bottoni3.disabled = true;
+    bottoni3.disabled = false;
   }
 };
 domandaRandom();
