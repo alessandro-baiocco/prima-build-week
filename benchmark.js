@@ -100,26 +100,17 @@ const questions = [
   ];
 //crea H1 random.
 let rand = Math.floor(Math.random()*questions.length)
-    const h1=document.querySelector("h1");
-    h1.innerHTML=questions[rand].question;
-  const risposte=questions[rand].incorrect_answers;
-  risposte.push(questions[rand].correct_answer)
-  console.log(risposte);
-  let a=0;
-  const casual=()=>{
-    a=parseInt(Math.floor(Math.random()*risposte.length+1));
-    let b=[];
-    if(!b.includes(a)){
-      b.push(a);
-      return a;
-    }else casual();
-  }
+const h1=document.querySelector("h1");
+h1.innerHTML=questions[rand].question;
+const risposte=questions[rand].incorrect_answers;
+risposte.push(questions[rand].correct_answer)
+console.log("risposte:",risposte);
+
     const bottoneUno=document.getElementById("primo");
-    bottoneUno.innerHTML=risposte[casual()];
+    bottoneUno.innerHTML=risposte[3];
     const bottoneDue=document.getElementById("secondo");
-    bottoneDue.innerHTML=risposte[casual()];
+    bottoneDue.innerHTML=risposte[0];
     const bottoneTre=document.getElementById("terzo");
-    bottoneTre.innerHTML=risposte[casual()];
+    bottoneTre.innerHTML=risposte[2];
     const bottoneQuarto=document.getElementById("quarto");
-    bottoneQuarto.innerHTML=risposte[casual()];
-  
+    bottoneQuarto.innerHTML=risposte[1];
