@@ -138,3 +138,15 @@ const generateInt = function () {
     generateInt();
   }
 };
+const bottoniTutti = document.querySelectorAll("button");
+console.log(bottoniTutti);
+
+bottoniTutti.forEach((button, index1) => {
+  button.addEventListener("click", () => {
+    bottoniTutti.forEach((button, index2) => {
+      index1 !== index2 ? button.classList.remove("selected") : button.classList.toggle("selected");
+    });
+
+    console.log("clicked", index1);
+  });
+});
