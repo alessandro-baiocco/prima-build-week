@@ -104,7 +104,6 @@ bottoniTutti.forEach((button, index1) => {
 
 let domandaRandom = () => {
   const myInterval = setInterval(updateCountdown, 1000);
-  
   let rand = Math.floor(Math.random() * questions.length);
   const h1 = document.querySelector("h1");
   h1.innerHTML = questions[rand].question;
