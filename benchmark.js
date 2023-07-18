@@ -82,6 +82,7 @@ const questions = [
   },
 ];
 
+//------------------------------------------------
 let risposteCollection = []; // cicla l'array per ottenere le risposte giuste
 for (let i = 0; i < questions.length; i++) {
   risposteCollection.push(questions[i].correct_answer);
@@ -108,6 +109,7 @@ bottoniTutti.forEach((button, index1) => {
     } else {
       risposteSbagliate++;
       console.log("sbagliato");
+      domandaRandom();
     }
     bottoniTutti.forEach((button, index2) => {
       index1 !== index2 ? button.classList.remove("selected") : button.classList.toggle("selected");
@@ -159,7 +161,7 @@ domandaRandom(); // richiamata
 const countdown = document.getElementById("countdown"); // questo è il timer
 let time = 5;
 
-const myInterval = setInterval(updateCountdown, 1000);
+let myInterval = setInterval(updateCountdown, 1000);
 function updateCountdown() {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
