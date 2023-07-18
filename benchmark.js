@@ -100,7 +100,6 @@ bottoniTutti.forEach((button, index1) => {
 let bottoni1 = document.getElementsByTagName("button")[0];
 let bottoni3 = document.getElementsByTagName("button")[2];
 
-const bottoneUno = document.getElementById("primo");
 let domandaRandom = () => {
   let rand = Math.floor(Math.random() * questions.length);
   const h1 = document.querySelector("h1");
@@ -108,6 +107,7 @@ let domandaRandom = () => {
   const risposte = questions[rand].incorrect_answers;
   risposte.push(questions[rand].correct_answer);
   console.log("risposte:", risposte);
+  const bottoneUno = document.getElementById("primo");
   bottoneUno.innerHTML = risposte[3];
   const bottoneDue = document.getElementById("secondo");
   bottoneDue.innerHTML = risposte[0];
