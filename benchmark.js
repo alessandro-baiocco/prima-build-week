@@ -103,6 +103,9 @@ const bottoniTutti = document.querySelectorAll("button");
 //     if (selezionata.innerHTML === questions[rand].correct_answer )
 //   }
 // }
+// if (index2.innerHTML === questions[rand].correct_answer) {
+//   console.log("funzi");
+// }
 
 let bottoni1 = document.getElementsByTagName("button")[0];
 let bottoni3 = document.getElementsByTagName("button")[2];
@@ -114,13 +117,11 @@ bottoniTutti.forEach((button, index1) => {
   button.addEventListener("click", () => {
     bottoniTutti.forEach((button, index2) => {
       index1 !== index2 ? button.classList.remove("selected") : button.classList.toggle("selected");
-      // if (index2.innerHTML === questions[rand].correct_answer) {
-      //   console.log("funzi");
-      // }
     });
     console.log("clicked", index1, bottoniTutti);
   });
 });
+
 let domandaRandom = () => {
   let rand = Math.floor(Math.random() * questions.length);
   if (!domandeUscite.includes(rand)) {
