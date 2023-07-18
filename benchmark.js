@@ -99,31 +99,37 @@ bottoniTutti.forEach((button, index1) => {
 
 let bottoni1 = document.getElementsByTagName("button")[0];
 let bottoni3 = document.getElementsByTagName("button")[2];
+let domandeUscite = [];
 
 let domandaRandom = () => {
   let rand = Math.floor(Math.random() * questions.length);
-  const h1 = document.querySelector("h1");
-  h1.innerHTML = questions[rand].question;
-  const risposte = questions[rand].incorrect_answers;
-  risposte.push(questions[rand].correct_answer);
-  console.log("risposte:", risposte);
-  const bottoneUno = document.getElementById("primo");
-  bottoneUno.innerHTML = risposte[3];
-  const bottoneDue = document.getElementById("secondo");
-  bottoneDue.innerHTML = risposte[0];
-  const bottoneTre = document.getElementById("terzo");
-  bottoneTre.innerHTML = risposte[2];
-  const bottoneQuarto = document.getElementById("quarto");
-  bottoneQuarto.innerHTML = risposte[1];
-  if (bottoni1.innerText === "undefined") {
-    bottoni1.disabled = true;
+  if (!domandeUscite.includes(rand)) {
+    const h1 = document.querySelector("h1");
+    h1.innerHTML = questions[rand].question;
+    const risposte = questions[rand].incorrect_answers;
+    risposte.push(questions[rand].correct_answer);
+    console.log("risposte:", risposte);
+    const bottoneUno = document.getElementById("primo");
+    bottoneUno.innerHTML = risposte[3];
+    const bottoneDue = document.getElementById("secondo");
+    bottoneDue.innerHTML = risposte[0];
+    const bottoneTre = document.getElementById("terzo");
+    bottoneTre.innerHTML = risposte[2];
+    const bottoneQuarto = document.getElementById("quarto");
+    bottoneQuarto.innerHTML = risposte[1];
+    if (bottoni1.innerText === "undefined") {
+      bottoni1.disabled = true;
+    } else {
+      bottoni1.disabled = false;
+    }
+    if (bottoni3.innerText === "undefined") {
+      bottoni3.disabled = true;
+    } else {
+      bottoni3.disabled = false;
+    }
+    domandeUscite.push(rand);
   } else {
-    bottoni1.disabled = false;
-  }
-  if (bottoni3.innerText === "undefined") {
-    bottoni3.disabled = true;
-  } else {
-    bottoni3.disabled = false;
+    domandaRandom();
   }
 };
 domandaRandom();
