@@ -83,17 +83,47 @@ const questions = [
   },
 ];
 //crea H1 random.
-let rand = Math.floor(Math.random()*questions.length)
-const h1=document.querySelector("h1");
-h1.innerHTML=questions[rand].question;
-const risposte=questions[rand].incorrect_answers;
-risposte.push(questions[rand].correct_answer)
-console.log("risposte:",risposte);
-const bottoneUno=document.getElementById("primo");
-bottoneUno.innerHTML=risposte[3];
-const bottoneDue=document.getElementById("secondo");
-bottoneDue.innerHTML=risposte[0];
-const bottoneTre=document.getElementById("terzo");
-bottoneTre.innerHTML=risposte[2];
-const bottoneQuarto=document.getElementById("quarto");
-bottoneQuarto.innerHTML=risposte[1];
+let rand = Math.floor(Math.random() * questions.length);
+const h1 = document.querySelector("h1");
+h1.innerHTML = questions[rand].question;
+const risposte = questions[rand].incorrect_answers;
+risposte.push(questions[rand].correct_answer);
+console.log("risposte:", risposte);
+const bottoneUno = document.getElementById("primo");
+bottoneUno.innerHTML = risposte[3];
+const bottoneDue = document.getElementById("secondo");
+bottoneDue.innerHTML = risposte[0];
+const bottoneTre = document.getElementById("terzo");
+bottoneTre.innerHTML = risposte[2];
+const bottoneQuarto = document.getElementById("quarto");
+bottoneQuarto.innerHTML = risposte[1];
+
+let time = 30;
+
+function myStopFunction() {
+  clearInterval(myInterval);
+}
+
+const myInterval = setInterval(updateCountdown, 1000);
+
+function updateCountdown() {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+
+  countdown.innerHTML = `${seconds}`;
+  time--;
+  if (time < 0) {
+    myStopFunction();
+  }
+}
+updateCountdown();
+
+const generateInt = function () {
+  const aNumGen = parseInt(Math.floor(Math.random() * 75 + 1));
+  if (!scheda1.includes(aNumGen)) {
+    scheda1.push(aNumGen);
+    return aNumGen;
+  } else {
+    generateInt();
+  }
+};
