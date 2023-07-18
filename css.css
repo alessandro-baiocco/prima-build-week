@@ -52,6 +52,13 @@ h2 {
   margin-top: 0px;
   margin-bottom: 0;
 }
+h3 {
+  margin-top: 160px;
+}
+
+.pink {
+  color: rgb(194, 18, 141);
+}
 
 p {
   margin-top: 0;
