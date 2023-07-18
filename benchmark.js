@@ -121,24 +121,25 @@ let domandaRandom = () => {
   const bottoneQuarto = document.getElementById("quarto");
   bottoneQuarto.innerHTML = risposte[1];
 };
-
 domandaRandom();
-let time = 30;
+
+const countdown = document.getElementById("countdown");
+let time = 5;
 
 function myStopFunction() {
   clearInterval(myInterval);
 }
 
 const myInterval = setInterval(updateCountdown, 1000);
-
 function updateCountdown() {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
-
   countdown.innerHTML = `${seconds}`;
   time--;
+
   if (time < 0) {
     myStopFunction();
+    domandaRandom();
   }
 }
 updateCountdown();
