@@ -130,11 +130,6 @@ domandaRandom();
 
 const countdown = document.getElementById("countdown");
 let time = 5;
-
-function myStopFunction() {
-  clearInterval(myInterval);
-}
-
 const myInterval = setInterval(updateCountdown, 1000);
 function updateCountdown() {
   const minutes = Math.floor(time / 60);
