@@ -167,3 +167,35 @@ input:focus {
   display: inline-block;
   border-radius: 30px;
 }
+
+.questionH1 {
+  font-weight: 500;
+  text-align: center;
+  font-size: 40px;
+  line-height: 100%;
+  margin-top: 100px;
+}
+
+.questionButton {
+  display: flex;
+  justify-content: center;
+  margin-inline: 30%;
+}
+
+#primo,
+#secondo,
+#terzo,
+#quarto {
+  padding-block: 20px;
+  padding-inline: 40px;
+  margin-left: 40px;
+  margin-bottom: 40px;
+  border-radius: 30px;
+  background-color: rgb(41, 41, 84);
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  border-top: 3px solid white;
+  border-left: 2px solid white;
+  border-right: 2px groove white;
+}
