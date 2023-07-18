@@ -129,7 +129,7 @@ let domandaRandom = () => {
 domandaRandom();
 
 const countdown = document.getElementById("countdown");
-let time = 5;
+let time = 30;
 
 function myStopFunction() {
   clearInterval(myInterval);
@@ -143,7 +143,7 @@ function updateCountdown() {
   time--;
 
   if (time === -1) {
-    time = 5;
+    time = 30;
     domandaRandom();
   }
 }
