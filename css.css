@@ -238,3 +238,8 @@ h3 {
   margin-bottom: 0;
   font-weight: 500;
 }
+
+#primo:disabled,
+#terzo:disabled {
+  display: none;
+}

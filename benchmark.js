@@ -85,7 +85,7 @@ const questions = [
 //crea H1 random.
 
 const bottoniTutti = document.querySelectorAll("button");
-console.log(bottoniTutti);
+console.log(bottoniTutti[0]);
 
 bottoniTutti.forEach((button, index1) => {
   button.addEventListener("click", () => {
@@ -97,11 +97,10 @@ bottoniTutti.forEach((button, index1) => {
   });
 });
 
-let bottoneRisposta1 = document.querySelector("#primo");
-let bottoneRisposta2 = document.querySelector("#secondo");
-let bottoneRisposta3 = document.querySelector("#terzo");
-let bottoneRisposta4 = document.querySelector("#quarto");
+let bottoni1 = document.getElementsByTagName("button")[0];
+let bottoni3 = document.getElementsByTagName("button")[2];
 
+const bottoneUno = document.getElementById("primo");
 let domandaRandom = () => {
   let rand = Math.floor(Math.random() * questions.length);
   const h1 = document.querySelector("h1");
@@ -109,10 +108,6 @@ let domandaRandom = () => {
   const risposte = questions[rand].incorrect_answers;
   risposte.push(questions[rand].correct_answer);
   console.log("risposte:", risposte);
-  const bottoneUno = document.getElementById("primo");
-  if (bottoneRisposta1.innerHTML === undefined) {
-    bottoneRisposta1.disa;
-  }
   bottoneUno.innerHTML = risposte[3];
   const bottoneDue = document.getElementById("secondo");
   bottoneDue.innerHTML = risposte[0];
@@ -120,6 +115,12 @@ let domandaRandom = () => {
   bottoneTre.innerHTML = risposte[2];
   const bottoneQuarto = document.getElementById("quarto");
   bottoneQuarto.innerHTML = risposte[1];
+  if (bottoni1.innerText === "undefined") {
+    bottoni1.disabled = true;
+  }
+  if (bottoni3.innerText === "undefined") {
+    bottoni3.disabled = true;
+  }
 };
 
 domandaRandom();
