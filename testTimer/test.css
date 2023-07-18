@@ -2,21 +2,3 @@
   color: black;
   font-size: 50px;
 }
-
-#circle {
-  display: flex;
-  justify-content: center;
-  padding: 25%;
-  width: 800px;
-  height: 800px;
-  /* background: rgb(20,33,150); */
-  background: linear-gradient(50deg, rgba(20, 33, 150, 1) 24%, rgba(149, 20, 150, 1) 25%);
-  border-radius: 50%;
-}
-
-#within {
-  width: 50%;
-  height: 50%;
-  background-color: white;
-  border-radius: 50%;
-}

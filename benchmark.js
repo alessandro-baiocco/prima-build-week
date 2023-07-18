@@ -81,17 +81,31 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
-
-let risposteCollection = []; // cicla l'array per ottenere le risposte giuste
-for (let i = 0; i < questions.length; i++) {
-  risposteCollection.push(questions[i].correct_answer);
-}
-
-// variabili globali
-let numberQuest = 1;
+// let selezionata = document.getElementsByClassName("selected")[0];
+// if (selezionata.innerHTML === questions[rand].correct_answer) {
+//   risposteGiuste++;
+//   console.log("giuste", risposteGiuste);
+// } else {
+//   risposteSbagliate++;
+//   console.log("sbagliato", risposteSbagliate);
+// }
+//crea H1 random.
 const questNumber = document.getElementById("changingNumber");
 let numberQuest = 1;
 const bottoniTutti = document.querySelectorAll("button");
+
+// let selezionata = document.getElementsByClassName("selected")[0];
+// const egiusta = (click) => {
+// bottoniTutti.forEach((button, index1) => {
+//   button.addEventListener("click", () => {
+//   click.addEventListener("click" , ()) => {
+//     if (selezionata.innerHTML === questions[rand].correct_answer )
+//   }
+// }
+// if (index2.innerHTML === questions[rand].correct_answer) {
+//   console.log("funzi");
+// }
+
 let bottoni1 = document.getElementsByTagName("button")[0];
 let bottoni3 = document.getElementsByTagName("button")[2];
 let domandeUscite = [];
@@ -107,25 +121,14 @@ for(let j=0;j<questions.length;j++){
 arrayGiuste.push(questions[j].correct_answer)
 }
 
-// per aggiungere la classe al bottone ----------------------------------------
 bottoniTutti.forEach((button, index1) => {
   button.addEventListener("click", () => {
-    if (risposteCollection.includes(bottoniTutti[index1].innerHTML)) {
-      risposteGiuste += 1;
-      console.log("giuste", risposteGiuste);
-      domandaRandom();
-    } else {
-      risposteSbagliate++;
-      console.log("sbagliato");
-    }
     bottoniTutti.forEach((button, index2) => {
       index1 !== index2 ? button.classList.remove("selected") : button.classList.toggle("selected");
     });
   });
 });
-//-------------------------------------------------------
 
-console.log(selezionata.innerHTML);
 let domandaRandom = () => {
     let rand = Math.floor(Math.random() * questions.length);
     if (!domandeUscite.includes(rand)) {
@@ -143,7 +146,6 @@ let domandaRandom = () => {
     bottoneQuarto.innerHTML = risposte[1];
  
     if (bottoni1.innerText === "undefined") {
-      //disablita i bottoni se ci sono 2 risposte
       bottoni1.disabled = true;
     } else {
       bottoni1.disabled = false;
@@ -152,7 +154,7 @@ let domandaRandom = () => {
       bottoni3.disabled = true;
     } else {
       bottoni3.disabled = false;
-    } //-------------------------------------------------------------------------
+    }
     domandeUscite.push(rand);
     questNumber.innerText = numberQuest;
     numberQuest++;
