@@ -90,10 +90,7 @@ const questions = [
 //   console.log("sbagliato", risposteSbagliate);
 // }
 //crea H1 random.
-const questNumber = document.getElementById("changingNumber");
-let numberQuest = 1;
 
-const bottoniTutti = document.querySelectorAll("button");
 
 // let selezionata = document.getElementsByClassName("selected")[0];
 // const egiusta = (click) => {
@@ -106,25 +103,29 @@ const bottoniTutti = document.querySelectorAll("button");
 // if (index2.innerHTML === questions[rand].correct_answer) {
 //   console.log("funzi");
 // }
-
+//--------------------------Variabili
+const questNumber = document.getElementById("changingNumber");
+let numberQuest = 1;
+const bottoniTutti = document.querySelectorAll("button");
 let bottoni1 = document.getElementsByTagName("button")[0];
 let bottoni3 = document.getElementsByTagName("button")[2];
 let domandeUscite = [];
 let risposteGiuste = 0;
 let risposteSbagliate = 0;
-
+const countdown = document.getElementById("countdown");
+let time = 6;
+const myInterval = setInterval(updateCountdown, 1000);
+//--------------------------Funzioni
 bottoniTutti.forEach((button, index1) => {
   button.addEventListener("click", () => {
     bottoniTutti.forEach((button, index2) => {
       index1 !== index2 ? button.classList.remove("selected") : button.classList.toggle("selected");
     });
-    console.log("clicked", index1, bottoniTutti);
   });
 });
-
 let domandaRandom = () => {
-  let rand = Math.floor(Math.random() * questions.length);
-  if (!domandeUscite.includes(rand)) {
+    let rand = Math.floor(Math.random() * questions.length);
+    if (!domandeUscite.includes(rand)) {
     const h1 = document.querySelector("h1");
     h1.innerHTML = questions[rand].question;
     const risposte = questions[rand].incorrect_answers;
@@ -156,21 +157,15 @@ let domandaRandom = () => {
     domandaRandom();
   }
 };
-domandaRandom();
-
-const countdown = document.getElementById("countdown");
-let time = 5;
-
-const myInterval = setInterval(updateCountdown, 1000);
 function updateCountdown() {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
   countdown.innerHTML = `${seconds}`;
   time--;
-
-  if (time === -1) {
-    time = 5;
+    if (time === -1) {
+    time = 6;
     domandaRandom();
     bottoniTutti.forEach((button, index1) => button.classList.remove("selected"));
   }
 }
+domandaRandom();
