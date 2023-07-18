@@ -138,9 +138,8 @@ function updateCountdown() {
   countdown.innerHTML = `${seconds}`;
   time--;
 
-  if (time < 0) {
-    myStopFunction();
+  if (time === -1) {
+    time = 5;
     domandaRandom();
   }
 }
-updateCountdown();
