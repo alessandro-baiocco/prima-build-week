@@ -13,6 +13,7 @@ body {
 header img {
   width: 155px;
   padding-bottom: 40px;
+  display: inline-block;
 }
 
 footer form button {
@@ -51,6 +52,13 @@ h2 {
   font-size: 30px;
   margin-top: 0px;
   margin-bottom: 0;
+}
+h3 {
+  margin-top: 160px;
+}
+
+.pink {
+  color: rgb(194, 18, 141);
 }
 
 p {
@@ -148,4 +156,106 @@ footer {
 input:focus {
   padding-left: 0;
   color: white;
+}
+
+.ovale {
+  width: 300px;
+  height: 50px;
+  background: red;
+  display: inline-block;
+  border-radius: 30px;
+}
+
+.questionH1 {
+  font-weight: 500;
+  text-align: center;
+  font-size: 40px;
+  line-height: 100%;
+  margin-top: 40px;
+}
+
+.questionButton {
+  display: flex;
+  justify-content: center;
+  margin-inline: 30%;
+}
+
+#primo,
+#secondo,
+#terzo,
+#quarto {
+  padding-block: 20px;
+  padding-inline: 40px;
+  margin-left: 40px;
+  margin-bottom: 40px;
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  border-top: 3px solid white;
+  border-left: 2px solid white;
+  margin-top: 50px;
+}
+#primo:hover,
+#secondo:hover,
+#terzo:hover,
+#quarto:hover {
+  padding-block: 20px;
+  padding-inline: 40px;
+  margin-left: 40px;
+  margin-bottom: 40px;
+  border-radius: 30px;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  border-top: 3px solid white;
+  border-left: 2px solid white;
+  margin-top: 50px;
+  background-color: rgb(194, 18, 141);
+}
+
+h3 {
+  text-align: center;
+  font-weight: 400;
+}
+
+.nav {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  align-items: center;
+  position: relative;
+  margin-right: 40px;
+}
+
+.timerSeconds {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+.unselected {
+  background-color: rgb(41, 41, 84);
+}
+
+.selected {
+  background-color: rgb(41, 41, 84);
+}
+
+.timerRemains {
+  font-size: 10px;
+}
+
+#countdown {
+  font-size: 40px;
+  padding: 0;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+#primo:disabled,
+#terzo:disabled {
+  display: none;
 }

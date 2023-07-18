@@ -1,4 +1,4 @@
-const countdown = document.querySelector("p");
+const countdown = document.getElementById("countdown");
 
 let time = 5;
 
@@ -19,3 +19,13 @@ function updateCountdown() {
   }
 }
 updateCountdown();
+
+const generateInt = function () {
+  const aNumGen = parseInt(Math.floor(Math.random() * 75 + 1));
+  if (!scheda1.includes(aNumGen)) {
+    scheda1.push(aNumGen);
+    return aNumGen;
+  } else {
+    generateInt();
+  }
+};
