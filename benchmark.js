@@ -82,8 +82,13 @@ const questions = [
   },
 ];
 
+let risposteCollection = []; // cicla l'array per ottenere le risposte giuste
+for (let i = 0; i < questions.length; i++) {
+  risposteCollection.push(questions[i].correct_answer);
+}
 
-//--------------------------Variabili
+// variabili globali
+let numberQuest = 1;
 const questNumber = document.getElementById("changingNumber");
 let numberQuest = 1;
 const bottoniTutti = document.querySelectorAll("button");
@@ -102,14 +107,25 @@ for(let j=0;j<questions.length;j++){
 arrayGiuste.push(questions[j].correct_answer)
 }
 
+// per aggiungere la classe al bottone ----------------------------------------
 bottoniTutti.forEach((button, index1) => {
   button.addEventListener("click", () => {
+    if (risposteCollection.includes(bottoniTutti[index1].innerHTML)) {
+      risposteGiuste += 1;
+      console.log("giuste", risposteGiuste);
+      domandaRandom();
+    } else {
+      risposteSbagliate++;
+      console.log("sbagliato");
+    }
     bottoniTutti.forEach((button, index2) => {
       index1 !== index2 ? button.classList.remove("selected") : button.classList.toggle("selected");
     });
   });
 });
+//-------------------------------------------------------
 
+console.log(selezionata.innerHTML);
 let domandaRandom = () => {
     let rand = Math.floor(Math.random() * questions.length);
     if (!domandeUscite.includes(rand)) {
@@ -127,6 +143,7 @@ let domandaRandom = () => {
     bottoneQuarto.innerHTML = risposte[1];
  
     if (bottoni1.innerText === "undefined") {
+      //disablita i bottoni se ci sono 2 risposte
       bottoni1.disabled = true;
     } else {
       bottoni1.disabled = false;
@@ -135,7 +152,7 @@ let domandaRandom = () => {
       bottoni3.disabled = true;
     } else {
       bottoni3.disabled = false;
-    }
+    } //-------------------------------------------------------------------------
     domandeUscite.push(rand);
     questNumber.innerText = numberQuest;
     numberQuest++;
@@ -145,7 +162,12 @@ let domandaRandom = () => {
     domandaRandom();
   }
 };
+domandaRandom();
 
+const countdown = document.getElementById("countdown");
+let time = 5;
+
+const myInterval = setInterval(updateCountdown, 1000);
 function updateCountdown() {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
