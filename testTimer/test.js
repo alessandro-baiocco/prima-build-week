@@ -1,4 +1,4 @@
-const countdown = document.querySelector("p");
+const countdown = document.getElementById("countdown");
 
 let time = 5;
 

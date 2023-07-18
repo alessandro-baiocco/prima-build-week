@@ -194,7 +194,6 @@ input:focus {
   font-weight: 500;
   border-top: 3px solid white;
   border-left: 2px solid white;
-  border-right: 2px groove white;
   margin-top: 50px;
 }
 
@@ -237,4 +236,9 @@ h3 {
   padding: 0;
   margin-bottom: 0;
   font-weight: 500;
+}
+
+#primo:disabled,
+#terzo:disabled {
+  display: none;
 }
