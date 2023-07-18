@@ -108,7 +108,6 @@ bottoniTutti.forEach((button, index1) => {
       index1 !== index2 ? button.classList.remove("selected") : button.classList.toggle("selected");
     });
   });
-  //let selezionata=document.getElementsByClassName("selected").item(0)
 });
 
 let domandaRandom = () => {
