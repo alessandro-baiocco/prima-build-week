@@ -117,8 +117,12 @@ let domandaRandom = () => {
   bottoneQuarto.innerHTML = risposte[1];
   if (bottoni1.innerText === "undefined") {
     bottoni1.disabled = true;
+  } else {
+    bottoni1.disabled = false;
   }
   if (bottoni3.innerText === "undefined") {
+    bottoni3.disabled = true;
+  } else {
     bottoni3.disabled = true;
   }
 };
