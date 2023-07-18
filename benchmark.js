@@ -83,9 +83,14 @@ const questions = [
   },
 ];
 //crea H1 random.
-
+const myInterval = setInterval(updateCountdown, 1000);
+let time = 5;
+let bottoneRisposta1 = document.querySelector("#primo");
+let bottoneRisposta2 = document.querySelector("#secondo");
+let bottoneRisposta3 = document.querySelector("#terzo");
+let bottoneRisposta4 = document.querySelector("#quarto");
 const bottoniTutti = document.querySelectorAll("button");
-console.log(bottoniTutti);
+
 
 bottoniTutti.forEach((button, index1) => {
   button.addEventListener("click", () => {
@@ -96,12 +101,6 @@ bottoniTutti.forEach((button, index1) => {
     console.log("clicked", index1);
   });
 });
-
-let bottoneRisposta1 = document.querySelector("#primo");
-let bottoneRisposta2 = document.querySelector("#secondo");
-let bottoneRisposta3 = document.querySelector("#terzo");
-let bottoneRisposta4 = document.querySelector("#quarto");
-
 let domandaRandom = () => {
   let rand = Math.floor(Math.random() * questions.length);
   const h1 = document.querySelector("h1");
@@ -121,16 +120,6 @@ let domandaRandom = () => {
   const bottoneQuarto = document.getElementById("quarto");
   bottoneQuarto.innerHTML = risposte[1];
 };
-
-domandaRandom();
-let time = 30;
-
-function myStopFunction() {
-  clearInterval(myInterval);
-}
-
-const myInterval = setInterval(updateCountdown, 1000);
-
 function updateCountdown() {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
@@ -138,7 +127,9 @@ function updateCountdown() {
   countdown.innerHTML = `${seconds}`;
   time--;
   if (time < 0) {
-    myStopFunction();
+    clearInterval(myInterval);
+    domandaRandom();
   }
 }
+domandaRandom();
 updateCountdown();
