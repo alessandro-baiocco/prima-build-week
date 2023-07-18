@@ -83,7 +83,7 @@ const questions = [
   },
 ];
 //crea H1 random.
-const myInterval = setInterval(updateCountdown, 1000);
+
 let time = 5;
 let bottoneRisposta1 = document.querySelector("#primo");
 let bottoneRisposta2 = document.querySelector("#secondo");
@@ -101,7 +101,10 @@ bottoniTutti.forEach((button, index1) => {
     console.log("clicked", index1);
   });
 });
+
 let domandaRandom = () => {
+  const myInterval = setInterval(updateCountdown, 1000);
+  
   let rand = Math.floor(Math.random() * questions.length);
   const h1 = document.querySelector("h1");
   h1.innerHTML = questions[rand].question;
@@ -131,5 +134,5 @@ function updateCountdown() {
     domandaRandom();
   }
 }
-domandaRandom();
-updateCountdown();
+
+
