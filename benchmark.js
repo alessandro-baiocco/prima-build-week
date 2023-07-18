@@ -102,11 +102,24 @@ const questions = [
 let rand = Math.floor(Math.random()*questions.length)
     const h1=document.querySelector("h1");
     h1.innerHTML=questions[rand].question;
-    const bottoneUno=document.getElementById("primo");
-    bottoneUno.innerHTML=questions[rand].correct_answer;
+  const risposte=questions[rand].incorrect_answers;
+  risposte.push(questions[rand].correct_answer)
+  console.log(risposte);
+  let a=0;
+  const casual=()=>{
+    a=parseInt(Math.floor(Math.random()*risposte.length+1));
+    let b=[];
+    if(!b.includes(a)){
+      b.push(a);
+      return a;
+    }else casual();
+  }
+  const bottoneUno=document.getElementById("primo");
+    bottoneUno.innerHTML=risposte[casual()];
     const bottoneDue=document.getElementById("secondo");
-    bottoneDue.innerHTML=questions[rand].incorrect_answers[0];
+    bottoneDue.innerHTML=risposte[casual()];
     const bottoneTre=document.getElementById("terzo");
-    bottoneTre.innerHTML=questions[rand].incorrect_answers[1];
+    bottoneTre.innerHTML=risposte[casual()];
     const bottoneQuarto=document.getElementById("quarto");
-    bottoneQuarto.innerHTML=questions[rand].incorrect_answers[2];
+    bottoneQuarto.innerHTML=risposte[casual()];
+  
