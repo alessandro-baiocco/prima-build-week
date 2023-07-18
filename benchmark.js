@@ -97,6 +97,11 @@ bottoniTutti.forEach((button, index1) => {
   });
 });
 
+let bottoneRisposta1 = document.querySelector("#primo");
+let bottoneRisposta2 = document.querySelector("#secondo");
+let bottoneRisposta3 = document.querySelector("#terzo");
+let bottoneRisposta4 = document.querySelector("#quarto");
+
 let domandaRandom = () => {
   let rand = Math.floor(Math.random() * questions.length);
   const h1 = document.querySelector("h1");
@@ -105,6 +110,9 @@ let domandaRandom = () => {
   risposte.push(questions[rand].correct_answer);
   console.log("risposte:", risposte);
   const bottoneUno = document.getElementById("primo");
+  if (bottoneRisposta1.innerHTML === undefined) {
+    bottoneRisposta1.disa;
+  }
   bottoneUno.innerHTML = risposte[3];
   const bottoneDue = document.getElementById("secondo");
   bottoneDue.innerHTML = risposte[0];
