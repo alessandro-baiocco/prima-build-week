@@ -83,6 +83,19 @@ const questions = [
   },
 ];
 //crea H1 random.
+
+const bottoniTutti = document.querySelectorAll("button");
+console.log(bottoniTutti);
+
+bottoniTutti.forEach((button, index1) => {
+  button.addEventListener("click", () => {
+    bottoniTutti.forEach((button, index2) => {
+      index1 !== index2 ? button.classList.remove("selected") : button.classList.toggle("selected");
+    });
+
+    console.log("clicked", index1);
+  });
+});
 let rand = Math.floor(Math.random() * questions.length);
 const h1 = document.querySelector("h1");
 h1.innerHTML = questions[rand].question;
