@@ -114,7 +114,7 @@ let rand = Math.floor(Math.random()*questions.length)
       return a;
     }else casual();
   }
-  const bottoneUno=document.getElementById("primo");
+    const bottoneUno=document.getElementById("primo");
     bottoneUno.innerHTML=risposte[casual()];
     const bottoneDue=document.getElementById("secondo");
     bottoneDue.innerHTML=risposte[casual()];
