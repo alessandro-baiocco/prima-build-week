@@ -260,12 +260,33 @@ h3 {
   display: none;
 }
 
+.resultLogo {
+  padding-bottom: 0;
+}
+
+.resultH1,
+.resultH2 {
+  text-align: center;
+}
+
+.resultH1 {
+  margin-bottom: 0;
+  font-size: 55px;
+  font-weight: 500;
+}
+
+.resultH2 {
+  margin-bottom: 50px;
+  color: white;
+  font-weight: 200;
+}
+
 .punteggioGlobale {
   display: flex;
   justify-content: center;
-  padding: 5%;
-  width: 400px;
-  height: 400px;
+  padding: 6%;
+  width: 225px;
+  height: 225px;
   /* background: rgb(20,33,150); */
   background: linear-gradient(50deg, rgba(20, 33, 150, 1) 24%, rgba(149, 20, 150, 1) 25%);
   border-radius: 50%;
@@ -279,7 +300,30 @@ h3 {
   border-radius: 50%;
 }
 
+.punteggioP {
+  display: flex;
+  justify-content: center;
+  margin-block: 50px 0;
+  padding-block: 0;
+}
+
 .result {
   display: flex;
   justify-content: center;
+}
+
+.resultFooter {
+  display: flex;
+  justify-content: center;
+  margin-inline: auto;
+  margin-top: 40px;
+}
+.resultButton {
+  padding-block: 16px;
+  padding-inline: 60px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
 }
