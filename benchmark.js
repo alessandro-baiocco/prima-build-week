@@ -141,8 +141,8 @@ let tempo = 5;
 let numberQuest = 0;
 const questNumber = document.getElementById("changingNumber");
 const bottoniTutti = document.querySelectorAll("button");
-let bottoni1 = document.getElementsByTagName("button")[0];
-let bottoni3 = document.getElementsByTagName("button")[2];
+let bottoni1 = document.getElementById("terzo");
+let bottoni3 = document.getElementById("quarto");
 let domandeUscite = [];
 let risposteGiuste = 0;
 let risposteSbagliate = 0;
@@ -186,7 +186,7 @@ bottoniTutti.forEach((button, index1) => {
 
 //-------------------------------------------------------
 let domandaRandom = () => {
-  tempo = 5;
+  tempo = 50;
   timer();
   let rand = Math.floor(Math.random() * questions.length);
   if (!domandeUscite.includes(rand)) {
@@ -194,14 +194,15 @@ let domandaRandom = () => {
     h1.innerHTML = questions[rand].question;
     const risposte = questions[rand].incorrect_answers;
     risposte.push(questions[rand].correct_answer);
+    risposte.sort();
     const bottoneUno = document.getElementById("primo");
-    bottoneUno.innerHTML = risposte[3];
+    bottoneUno.innerHTML = risposte[0];
     const bottoneDue = document.getElementById("secondo");
-    bottoneDue.innerHTML = risposte[0];
+    bottoneDue.innerHTML = risposte[1];
     const bottoneTre = document.getElementById("terzo");
     bottoneTre.innerHTML = risposte[2];
     const bottoneQuarto = document.getElementById("quarto");
-    bottoneQuarto.innerHTML = risposte[1];
+    bottoneQuarto.innerHTML = risposte[3];
     //--------------------------------rimozione bottoni per due risposte------------------------
     if (bottoni1.innerText === "undefined") {
       //disablita i bottoni se ci sono 2 risposte
