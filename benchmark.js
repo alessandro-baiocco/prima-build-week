@@ -170,6 +170,19 @@ let domandaRandom = () => {
     questNumber.innerText = numberQuest;
     numberQuest++;
     if (numberQuest === questions.length) {
+      testina.innerHTML = `<h1>Result</h1>
+      <h2>The summary of your answer</h2>`;
+      principale.innerHTML = `<div class="result">
+      <div class="correct"></div>
+      <div
+        class="punteggioGlobale"
+        style="background-image: conic-gradient(from 0deg at 50% 50%, #a100ffff 10%, #71c4ffff 10%)"
+      >
+        <div class="inPunteggio"></div>
+      </div>
+      <div class="wrong"></div>
+    </div>`;
+      piedi.innerHTML = `<a href="feedbackPage.html"><button>RATE US</button></a>`;
     }
   } else {
     domandaRandom();
