@@ -9,4 +9,9 @@ scatolaCheck.onchange = function () {
   }
 };
 
-const noRefresh = (vaiAvanti) => vaiAvanti.preventDefault();
+const noRefresh = (vaiAvanti) => {
+  // vaiAvanti.preventDefault();
+  bottone.onclick = function () {
+    benchmark.html;
+  };
+};
