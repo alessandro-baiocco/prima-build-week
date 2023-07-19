@@ -80,6 +80,54 @@ const questions = [
     correct_answer: "Java",
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What is the domain name for the country Tuvalu?",
+    correct_answer: ".tv",
+    incorrect_answers: [".tu", ".tt", ".tl"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "medium",
+    question: "Which one of these is not an official development name for a Ubuntu release?",
+    correct_answer: "Mystic Mansion",
+    incorrect_answers: ["Trusty Tahr", "Utopic Unicorn", "Wily Werewolf"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "medium",
+    question: "In the server hosting industry IaaS stands for...",
+    correct_answer: "Infrastructure as a Service",
+    incorrect_answers: ["Internet as a Service", "Internet and a Server", "Infrastructure as a Server"],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "medium",
+    question: "The open source program Redis is a relational database server.",
+    correct_answer: "False",
+    incorrect_answers: ["True"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "On Twitter, what was the original character limit for a Tweet?",
+    correct_answer: "140",
+    incorrect_answers: ["120", "160", "100"],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "hard",
+    question: "DHCP stands for Dynamic Host Configuration Port.",
+    correct_answer: "False",
+    incorrect_answers: ["True"],
+  },
 ];
 
 //------------------------------------------------// variabili globali
@@ -90,7 +138,7 @@ for (let i = 0; i < questions.length; i++) {
 }
 const countdown = document.getElementById("countdown");
 let tempo = 5;
-let numberQuest = 1;
+let numberQuest = 0;
 const questNumber = document.getElementById("changingNumber");
 const bottoniTutti = document.querySelectorAll("button");
 let bottoni1 = document.getElementsByTagName("button")[0];
@@ -98,7 +146,9 @@ let bottoni3 = document.getElementsByTagName("button")[2];
 let domandeUscite = [];
 let risposteGiuste = 0;
 let risposteSbagliate = 0;
-let selezionata = document.querySelector(".selected");
+let testina = document.querySelector("header");
+let principale = document.querySelector("main");
+let piedi = document.querySelector("footer");
 
 // costruzione timer-------------------------------------
 const timer = () => {
@@ -121,12 +171,10 @@ bottoniTutti.forEach((button, index1) => {
       risposteGiuste += 1;
       clearInterval();
       domandaRandom();
-      console.log("GIUSTE", risposteGiuste);
     } else {
       risposteSbagliate++;
       clearInterval();
       domandaRandom();
-      console.log("SBAGLIATE", risposteSbagliate);
     }
     bottoniTutti.forEach((button, index2) => {
       index1 !== index2 ? button.classList.remove("selected") : button.classList.toggle("selected");
@@ -135,7 +183,6 @@ bottoniTutti.forEach((button, index1) => {
 });
 
 //-------------------------------------------------------
-console.log(selezionata.innerHTML);
 let domandaRandom = () => {
   tempo = 5;
   timer();
@@ -167,23 +214,28 @@ let domandaRandom = () => {
     }
     //-------------------------------------------------------------------------
     domandeUscite.push(rand);
-    questNumber.innerText = numberQuest;
-    numberQuest++;
-    if (numberQuest === questions.length) {
-      testina.innerHTML = `<h1>Result</h1>
-      <h2>The summary of your answer</h2>`;
+    if (numberQuest === 10) {
+      console.log("dopo", numberQuest);
+      clearInterval(timer);
+      testina.innerHTML = `<img class="resultLogo" src="./assets/epicode_logo.png" alt="logo" />
+      <p class="resultH1">Results</p>
+      <p class="resultH2">The summary of your answer:</p>`;
       principale.innerHTML = `<div class="result">
       <div class="correct"></div>
-      <div
-        class="punteggioGlobale"
-        style="background-image: conic-gradient(from 0deg at 50% 50%, #a100ffff 10%, #71c4ffff 10%)"
-      >
-        <div class="inPunteggio"></div>
+      <div class="punteggioGlobale" style="background-image: conic-gradient(from 0deg at 50% 50%, #a100ffff 10%, #71c4ffff 10%)">
+      <div class="inPunteggio">
+      <p class="punteggioP">
+      Congratulazioni! <br />
+      Hai passato il test
+      </p>
       </div>
-      <div class="wrong"></div>
-    </div>`;
-      piedi.innerHTML = `<a href="feedbackPage.html"><button>RATE US</button></a>`;
+      </div>`;
+      piedi.innerHTML = `<footer class="resultFooter">
+      <a href="feedbackPage.html"><button class="resultButton">RATE US</button></a>
+      </footer>`;
     }
+    numberQuest++;
+    questNumber.innerText = numberQuest;
   } else {
     domandaRandom();
   }

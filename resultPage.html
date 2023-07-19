@@ -9,13 +9,20 @@
   <body>
     <header>
       <img class="resultLogo" src="./assets/epicode_logo.png" alt="logo" />
+      <h1 class="resultH1">Results</h1>
+      <h2 class="resultH2">The summary of your answer:</h2>
     </header>
-    <h1 class="resultH1">Results</h1>
-    <h2 class="resultH2">The summary of your answer:</h2>
     <main>
       <div class="result">
-        <div class="correct"></div>
-        <div class="punteggioGlobale">
+        <div class="correct">
+          <span class="grosso">Correct</span>
+          <span class="medio">66.7%</span>
+          <span class="piccolo">4/6 QUESTIONS</span>
+        </div>
+        <div
+          class="punteggioGlobale"
+          style="background-image: conic-gradient(from 0deg at 50% 50%, #c2128d 10%, #00ffff 10%)"
+        >
           <div class="inPunteggio">
             <p class="punteggioP">
               Congratulazioni! <br />
@@ -23,7 +30,11 @@
             </p>
           </div>
         </div>
-        <div class="wrong"></div>
+        <div class="wrong">
+          <span class="grosso">Wrong</span>
+          <span class="medio">33.3%</span>
+          <span class="piccolo">2/6 QUESTIONS</span>
+        </div>
       </div>
     </main>
     <footer class="resultFooter">
