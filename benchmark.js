@@ -103,11 +103,12 @@ let selezionata = document.querySelector(".selected");
 
 const timer=()=>{
   const minutes = Math.floor(tempo / 60);
-  let seconds = tempo % 60;
+  let seconds = tempo % 61;
   countdown.innerHTML = `${seconds}`;
   tempo--;
   if(tempo===-2){
     tempo=5;
+    risposteSbagliate++;
     domandaRandom();
   }
 };
@@ -116,25 +117,20 @@ const intervallo=setInterval(timer,1000);
 bottoniTutti.forEach((button, index1) => {
   button.addEventListener("click", () => {
     if (risposteCollection.includes(bottoniTutti[index1].innerHTML)) {
-      risposteGiuste += 1;
-      console.log("giuste", risposteGiuste);
-      clearInterval(tempo);
+      risposteGiuste+=1;
+      clearInterval();
       domandaRandom();
     } else {
-      risposteSbagliate++;
-      console.log("sbagliato");
-      clearInterval(tempo);
+      risposteSbagliate+=1;
+      clearInterval();
       domandaRandom();
     }
     bottoniTutti.forEach((button, index2) => {
       index1 !== index2 ? button.classList.remove("selected") : button.classList.toggle("selected");
     });
-    console.log("clicked", index1, bottoniTutti);
   });
 });
 //-------------------------------------------------------
-
-console.log(selezionata.innerHTML);
 let domandaRandom = () => {
   tempo=5;
   timer();
@@ -169,9 +165,12 @@ let domandaRandom = () => {
     questNumber.innerText = numberQuest;
     numberQuest++;
     if (numberQuest === questions.length) {
+  
     }
-  } else {
-    domandaRandom();
+  } else { 
+    if(domandeUscite.length===questions.length){
+      console.log("finito");
+  }domandaRandom();
   }
 };
  domandaRandom();// richiamata
