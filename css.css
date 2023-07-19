@@ -259,3 +259,27 @@ h3 {
 #terzo:disabled {
   display: none;
 }
+
+.punteggioGlobale {
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+  width: 400px;
+  height: 400px;
+  /* background: rgb(20,33,150); */
+  background: linear-gradient(50deg, rgba(20, 33, 150, 1) 24%, rgba(149, 20, 150, 1) 25%);
+  border-radius: 50%;
+}
+
+.inPunteggio {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/bg.jpg);
+  background-position: center;
+  border-radius: 50%;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+}
