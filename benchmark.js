@@ -89,7 +89,7 @@ for (let i = 0; i < questions.length; i++) {
   risposteCollection.push(questions[i].correct_answer);
 }
 const countdown = document.getElementById("countdown");
-let tempo=5;
+let tempo = 5;
 let numberQuest = 1;
 const questNumber = document.getElementById("changingNumber");
 const bottoniTutti = document.querySelectorAll("button");
@@ -100,30 +100,31 @@ let risposteGiuste = 0;
 let risposteSbagliate = 0;
 let selezionata = document.querySelector(".selected");
 
-
-const timer=()=>{
+// costruzione timer-------------------------------------
+const timer = () => {
   const minutes = Math.floor(tempo / 60);
-  let seconds = tempo % 60;
-  countdown.innerHTML = `${seconds}`;
+  let seconds = tempo % 61;
+  countdown.innerText = seconds;
   tempo--;
-  if(tempo===-2){
-    tempo=5;
+  if (tempo === -2) {
+    tempo = 60;
     domandaRandom();
   }
 };
-const intervallo=setInterval(timer,1000);
+const intervallo = setInterval(timer, 1000);
+
 // per aggiungere la classe al bottone ----------------------------------------
 bottoniTutti.forEach((button, index1) => {
   button.addEventListener("click", () => {
     if (risposteCollection.includes(bottoniTutti[index1].innerHTML)) {
       risposteGiuste += 1;
       console.log("giuste", risposteGiuste);
-      clearInterval(tempo);
+      clearInterval();
       domandaRandom();
     } else {
       risposteSbagliate++;
       console.log("sbagliato");
-      clearInterval(tempo);
+      clearInterval();
       domandaRandom();
     }
     bottoniTutti.forEach((button, index2) => {
@@ -132,11 +133,11 @@ bottoniTutti.forEach((button, index1) => {
     console.log("clicked", index1, bottoniTutti);
   });
 });
-//-------------------------------------------------------
 
+//-------------------------------------------------------
 console.log(selezionata.innerHTML);
 let domandaRandom = () => {
-  tempo=5;
+  tempo = 60;
   timer();
   let rand = Math.floor(Math.random() * questions.length);
   if (!domandeUscite.includes(rand)) {
@@ -151,7 +152,7 @@ let domandaRandom = () => {
     const bottoneTre = document.getElementById("terzo");
     bottoneTre.innerHTML = risposte[2];
     const bottoneQuarto = document.getElementById("quarto");
-    bottoneQuarto.innerHTML = risposte[1]; 
+    bottoneQuarto.innerHTML = risposte[1];
     //--------------------------------rimozione bottoni per due risposte------------------------
     if (bottoni1.innerText === "undefined") {
       //disablita i bottoni se ci sono 2 risposte
@@ -163,7 +164,7 @@ let domandaRandom = () => {
       bottoni3.disabled = true;
     } else {
       bottoni3.disabled = false;
-    } 
+    }
     //-------------------------------------------------------------------------
     domandeUscite.push(rand);
     questNumber.innerText = numberQuest;
@@ -174,6 +175,6 @@ let domandaRandom = () => {
     domandaRandom();
   }
 };
- domandaRandom();// richiamata
+domandaRandom(); // richiamata
 
 //----------------------------------------------------------------
