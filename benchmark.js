@@ -171,10 +171,12 @@ bottoniTutti.forEach((button, index1) => {
       risposteGiuste += 1;
       clearInterval();
       domandaRandom();
+      console.log("giuste", risposteGiuste);
     } else {
       risposteSbagliate++;
       clearInterval();
       domandaRandom();
+      console.log("sbagliato", risposteSbagliate);
     }
     bottoniTutti.forEach((button, index2) => {
       index1 !== index2 ? button.classList.remove("selected") : button.classList.toggle("selected");
@@ -214,25 +216,58 @@ let domandaRandom = () => {
     }
     //-------------------------------------------------------------------------
     domandeUscite.push(rand);
+    //--------------------------------cambio pagina--------------------------------
     if (numberQuest === 10) {
+      //-------------------------------calcolo risultati-----------------
+      let percSbagliate = risposteSbagliate * 10;
+      let percGiuste = risposteGiuste * 10;
+
       console.log("dopo", numberQuest);
       clearInterval(timer);
       testina.innerHTML = `<img class="resultLogo" src="./assets/epicode_logo.png" alt="logo" />
       <p class="resultH1">Results</p>
       <p class="resultH2">The summary of your answer:</p>`;
       principale.innerHTML = `<div class="result">
-      <div class="correct"></div>
-      <div class="punteggioGlobale" style="background-image: conic-gradient(from 0deg at 50% 50%, #a100ffff 10%, #71c4ffff 10%)">
-      <div class="inPunteggio">
-      <p class="punteggioP">
-      Congratulazioni! <br />
-      Hai passato il test
-      </p>
+      <div class="correct">
+        <span class="grosso">Correct</span>
+        <span class="medio">${percGiuste}%</span>
+        <span class="piccolo">${risposteGiuste}/10 QUESTIONS</span>
       </div>
-      </div>`;
+      <div
+        class="punteggioGlobale"
+        style="background-image: conic-gradient(from 0deg at 50% 50%, #c2128d ${percSbagliate}%, #00ffff ${percSbagliate}%)"
+      >
+        <div class="inPunteggio">
+        </div>
+      </div>
+      <div class="wrong">
+        <span class="grosso">Wrong</span>
+        <span class="medio">${percSbagliate}%</span>
+        <span class="piccolo">${risposteSbagliate}/10 QUESTIONS</span>
+      </div>
+    </div>`;
       piedi.innerHTML = `<footer class="resultFooter">
       <a href="feedbackPage.html"><button class="resultButton">RATE US</button></a>
       </footer>`;
+      const inPunteggio = document.querySelector(".inPunteggio");
+      const punteggioH4 = document.createElement("h4");
+      const punteggioP = document.createElement("p");
+      punteggioH4.classList.add("punteggioH4");
+      punteggioP.classList.add("punteggioP");
+      if (percGiuste >= 60) {
+        punteggioH4.innerHTML = `Congratulations! <span class="aqua">You passed the exam</span>`;
+        punteggioP.innerHTML = `We'll send you a certificate <br />
+        in few minutes. <br />
+        check your email (including <br />
+        promotion / spam folder)`;
+        inPunteggio.append(punteggioH4);
+        inPunteggio.append(punteggioP);
+      } else {
+        punteggioH4.innerHTML = `Unlucky! <span class="red">You didn't pass the exam`;
+        punteggioP.innerHTML = `STUDY MORE (idiot) <br />and try next time`;
+        inPunteggio.append(punteggioH4);
+        inPunteggio.append(punteggioP);
+      }
     }
     numberQuest++;
     questNumber.innerText = numberQuest;
