@@ -136,8 +136,9 @@ let risposteCollection = []; // cicla l'array per ottenere le risposte giuste
 for (let i = 0; i < questions.length; i++) {
   risposteCollection.push(questions[i].correct_answer);
 }
+const timerEnorme = document.querySelector(".nav");
 const countdown = document.getElementById("countdown");
-let tempo = 5;
+let tempo = 610;
 let numberQuest = 0;
 const questNumber = document.getElementById("changingNumber");
 const bottoniTutti = document.querySelectorAll("button");
@@ -155,10 +156,20 @@ const timer = () => {
   const minutes = Math.floor(tempo / 60);
   let seconds = tempo % 61;
   countdown.innerText = seconds;
+  //----------------------------------
+  let percTempo = 100 - (seconds * 100) / 60;
+  timerEnorme.innerHTML = `<div class="containerTimer" style = "background-image : conic-gradient(from 0deg at 50% 50%, #8080807c ${percTempo}%, #00ffff ${percTempo}%)" >
+  <div class="inContainer">
+    <p class="timerSeconds">Seconds</p>
+    <p id="countdown">${seconds}</p>
+    <p class="timerRemains">Remains</p>
+  </div>
+</div>`;
+  //-------------------------------------------
   tempo--;
   if (tempo === -2) {
     risposteSbagliate++;
-    tempo = 5;
+    tempo = 610;
     domandaRandom();
   }
 };
@@ -186,7 +197,7 @@ bottoniTutti.forEach((button, index1) => {
 
 //-------------------------------------------------------
 let domandaRandom = () => {
-  tempo = 5;
+  tempo = 610;
   timer();
   let rand = Math.floor(Math.random() * questions.length);
   if (!domandeUscite.includes(rand)) {
