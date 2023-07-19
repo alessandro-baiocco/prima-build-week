@@ -107,7 +107,8 @@ const timer = () => {
   countdown.innerText = seconds;
   tempo--;
   if (tempo === -2) {
-    tempo = 60;
+    risposteSbagliate++;
+    tempo = 5;
     domandaRandom();
   }
 };
@@ -118,26 +119,25 @@ bottoniTutti.forEach((button, index1) => {
   button.addEventListener("click", () => {
     if (risposteCollection.includes(bottoniTutti[index1].innerHTML)) {
       risposteGiuste += 1;
-      console.log("giuste", risposteGiuste);
       clearInterval();
       domandaRandom();
+      console.log("GIUSTE", risposteGiuste);
     } else {
       risposteSbagliate++;
-      console.log("sbagliato");
       clearInterval();
       domandaRandom();
+      console.log("SBAGLIATE", risposteSbagliate);
     }
     bottoniTutti.forEach((button, index2) => {
       index1 !== index2 ? button.classList.remove("selected") : button.classList.toggle("selected");
     });
-    console.log("clicked", index1, bottoniTutti);
   });
 });
 
 //-------------------------------------------------------
 console.log(selezionata.innerHTML);
 let domandaRandom = () => {
-  tempo = 60;
+  tempo = 5;
   timer();
   let rand = Math.floor(Math.random() * questions.length);
   if (!domandeUscite.includes(rand)) {
