@@ -197,7 +197,7 @@ input:focus {
   padding-block: 20px;
   padding-inline: 40px;
   margin-left: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 5px;
   border-radius: 30px;
   color: white;
   font-size: 20px;
@@ -213,7 +213,7 @@ input:focus {
   padding-block: 20px;
   padding-inline: 40px;
   margin-left: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 5px;
   border-radius: 30px;
   color: white;
   font-size: 20px;
@@ -247,10 +247,6 @@ h3 {
 }
 
 .unselected {
-  background-color: rgb(41, 41, 84);
-}
-
-.selected {
   background-color: rgb(41, 41, 84);
 }
 
