@@ -138,7 +138,7 @@ for (let i = 0; i < questions.length; i++) {
 }
 const timerEnorme = document.querySelector(".nav");
 const countdown = document.getElementById("countdown");
-let tempo = 610;
+let tempo = 60;
 let numberQuest = 0;
 const questNumber = document.getElementById("changingNumber");
 const bottoniTutti = document.querySelectorAll("button");
@@ -169,7 +169,7 @@ const timer = () => {
   tempo--;
   if (tempo === -2) {
     risposteSbagliate++;
-    tempo = 610;
+    tempo = 60;
     domandaRandom();
   }
 };
@@ -197,7 +197,7 @@ bottoniTutti.forEach((button, index1) => {
 
 //-------------------------------------------------------
 let domandaRandom = () => {
-  tempo = 610;
+  tempo = 60;
   timer();
   let rand = Math.floor(Math.random() * questions.length);
   if (!domandeUscite.includes(rand)) {
