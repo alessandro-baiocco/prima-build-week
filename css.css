@@ -97,6 +97,7 @@ footer {
   width: 20px;
   cursor: pointer;
   background: rgba(40, 40, 40, 0.2);
+  accent-color: #00ffff;
   border: solid 2px white;
   margin: 0px 6px;
   vertical-align: text-top;
