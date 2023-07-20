@@ -237,49 +237,49 @@ const questions = [
     incorrect_answers: [".tu", ".tt", ".tl"],
   },
 ];
-
-//------------------------------------------------// variabili globali
-let numeroQuestioni = document.querySelector("#questionNumber:checked");
-let difficoltaQuestioni = document.querySelector("#difficulty:checked");
-const timerEnorme = document.querySelector(".nav");
-const countdown = document.getElementById("countdown");
-let tempo = 60;
-let numberQuest = 0;
-const questNumber = document.getElementById("changingNumber");
-const bottoniTutti = document.querySelectorAll("button");
-let bottoni1 = document.getElementsByTagName("button")[0];
-let bottoni3 = document.getElementsByTagName("button")[2];
-let domandeUscite = [];
-let risposteGiuste = 0;
-let risposteSbagliate = 0;
 let testina = document.querySelector("header");
 let principale = document.querySelector("main");
 let piedi = document.querySelector("footer");
-//------------------------------------------------------
+let numeroQuestioni = document.querySelector("#questionNumber:checked");
+let difficoltaQuestioni = document.querySelector("#difficulty:checked");
+
 const partireConDomande = () => {
   testina.innerHTML = ` <img src="./assets/epicode_logo.png" alt="logoEpicode" />
   <nav class="nav">
-    <div class="containerTimer">
-      <div class="inContainer">
-        <p class="timerSeconds">Seconds</p>
-        <p id="countdown"></p>
-        <p class="timerRemains">Remaining</p>
-        </div>
-        </div>
-      </nav>`;
+  <div class="containerTimer">
+  <div class="inContainer">
+  <p class="timerSeconds">Seconds</p>
+  <p id="countdown"></p>
+  <p class="timerRemains">Remaining</p>
+  </div>
+  </div>
+  </nav>`;
   principale.innerHTML = `<h1 class="questionH1"></h1>
   <div class="questionButton">
-    <div>
-      <button id="primo" class="unselected"></button>
-      <button id="secondo" class="unselected selected"></button>
-    </div>
-    <div>
-      <button id="terzo" class="unselected"></button>
-      <button id="quarto" class="unselected"></button>
-    </div>
+  <div>
+  <button id="primo" class="unselected"></button>
+  <button id="secondo" class="unselected selected"></button>
+  </div>
+  <div>
+  <button id="terzo" class="unselected"></button>
+  <button id="quarto" class="unselected"></button>
+  </div>
   </div>`;
-  piedi.innerHTML = `<h3>QUESTION <span id="changingNumber"></span> <span class="pink"> / 10</span></h3>`;
+  piedi.innerHTML = `<h3>QUESTION <span id="changingNumber"></span> <span class="pink"> / ${numeroQuestioni.value}</span></h3>`;
   //-----------------------------------------------
+  //------------------------------------------------// variabili globali
+  const timerEnorme = document.querySelector(".nav");
+  let tempo = 60;
+  let numberQuest = 0;
+  const questNumber = document.getElementById("changingNumber");
+  const bottoniTutti = document.querySelectorAll("button");
+  let bottoni1 = document.getElementsByTagName("button")[0];
+  let bottoni3 = document.getElementsByTagName("button")[2];
+  let domandeUscite = [];
+  let risposteGiuste = 0;
+  let risposteSbagliate = 0;
+  const countdown = document.getElementById("countdown");
+  //------------------------------------------------------
   let risposteCollection = []; // cicla l'array per ottenere le risposte giuste
   for (let i = 0; i < questions.length; i++) {
     risposteCollection.push(questions[i].correct_answer);
@@ -293,12 +293,12 @@ const partireConDomande = () => {
     //----------------------------------
     let percTempo = 100 - (seconds * 100) / 60;
     timerEnorme.innerHTML = `<div class="containerTimer" style = "background-image : conic-gradient(from 0deg at 50% 50%, #8080807c ${percTempo}%, #00ffff ${percTempo}%)" >
-  <div class="inContainer">
+    <div class="inContainer">
     <p class="timerSeconds">SECONDS</p>
     <p id="countdown">${seconds}</p>
     <p class="timerRemains">REMAINING</p>
-  </div>
-</div>`;
+    </div>
+    </div>`;
     //-------------------------------------------
     tempo--;
     if (tempo === -2) {
@@ -362,10 +362,10 @@ const partireConDomande = () => {
       //-------------------------------------------------------------------------
       domandeUscite.push(rand);
       //--------------------------------cambio pagina--------------------------------
-      if (numberQuest === 10) {
+      if (numberQuest === parseInt(numeroQuestioni.value)) {
         //-------------------------------calcolo risultati-----------------
-        let percSbagliate = risposteSbagliate * 10;
-        let percGiuste = risposteGiuste * 10;
+        let percSbagliate = (risposteSbagliate * 100) / parseInt(numeroQuestioni.value);
+        let percGiuste = (risposteGiuste * 100) / parseInt(numeroQuestioni.value);
 
         console.log("dopo", numberQuest);
         clearInterval(timer);
@@ -375,8 +375,8 @@ const partireConDomande = () => {
         principale.innerHTML = `<div class="result">
       <div class="correct">
         <span class="grosso">Correct</span>
-        <span class="medio">${percGiuste}%</span>
-        <span class="piccolo">${risposteGiuste}/10 QUESTIONS</span>
+        <span class="medio">${Math.round(percGiuste * 10) / 10}%</span>
+        <span class="piccolo">${risposteGiuste}/${parseInt(numeroQuestioni.value)} QUESTIONS</span>
       </div>
       <div
         class="punteggioGlobale"
@@ -387,8 +387,8 @@ const partireConDomande = () => {
       </div>
       <div class="wrong">
         <span class="grosso">Wrong</span>
-        <span class="medio">${percSbagliate}%</span>
-        <span class="piccolo">${risposteSbagliate}/10 QUESTIONS</span>
+        <span class="medio">${Math.round(percSbagliate * 10) / 10}%</span>
+        <span class="piccolo">${risposteSbagliate}/${parseInt(numeroQuestioni.value)} QUESTIONS</span>
       </div>
     </div>`;
         piedi.innerHTML = `<footer class="resultFooter">
