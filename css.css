@@ -442,3 +442,7 @@ a:visited {
   text-align: center;
   box-shadow: 0px 0px 0px 0px #0000001e, inset 4px 4px 15px 0px #0000009f;
 }
+
+fieldset {
+  border: none;
+}
