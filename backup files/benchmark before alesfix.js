@@ -49,13 +49,15 @@ const partireConDomande = () => {
 
   // costruzione timer-------------------------------------
   const timer = () => {
-    countdown.innerText = tempo;
+    const minutes = Math.floor(tempo / 60);
+    let seconds = tempo % 61;
+    countdown.innerText = seconds;
     //----------------------------------
-    let percTempo = 100 - (tempo * 100) / 60;
+    let percTempo = 100 - (seconds * 100) / 60;
     timerEnorme.innerHTML = `<div class="containerTimer" style = "background-image : conic-gradient(from 0deg at 50% 50%, #8080807c ${percTempo}%, #00ffff ${percTempo}%)" >
     <div class="inContainer">
     <p class="timerSeconds">SECONDS</p>
-    <p id="countdown">${tempo}</p>
+    <p id="countdown">${seconds}</p>
     <p class="timerRemains">REMAINING</p>
     </div>
     </div>`;
@@ -83,6 +85,9 @@ const partireConDomande = () => {
         domandaRandom();
         console.log("sbagliato", risposteSbagliate);
       }
+      bottoniTutti.forEach((button, index2) => {
+        index1 !== index2 ? button.classList.remove("selected") : button.classList.toggle("selected");
+      });
     });
   });
 
