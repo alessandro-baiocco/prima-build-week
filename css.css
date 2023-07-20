@@ -98,6 +98,7 @@ footer {
   cursor: pointer;
   background: rgba(40, 40, 40, 0.2);
   border: solid 2px white;
+  accent-color: aqua;
   margin: 0px 6px;
   vertical-align: text-top;
 }

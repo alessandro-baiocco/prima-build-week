@@ -87,47 +87,7 @@ const questions = [
     question: "What is the domain name for the country Tuvalu?",
     correct_answer: ".tv",
     incorrect_answers: [".tu", ".tt", ".tl"],
-  },
-  {
-    category: "Science: Computers",
-    type: "multiple",
-    difficulty: "medium",
-    question: "Which one of these is not an official development name for a Ubuntu release?",
-    correct_answer: "Mystic Mansion",
-    incorrect_answers: ["Trusty Tahr", "Utopic Unicorn", "Wily Werewolf"],
-  },
-  {
-    category: "Science: Computers",
-    type: "multiple",
-    difficulty: "medium",
-    question: "In the server hosting industry IaaS stands for...",
-    correct_answer: "Infrastructure as a Service",
-    incorrect_answers: ["Internet as a Service", "Internet and a Server", "Infrastructure as a Server"],
-  },
-  {
-    category: "Science: Computers",
-    type: "boolean",
-    difficulty: "medium",
-    question: "The open source program Redis is a relational database server.",
-    correct_answer: "False",
-    incorrect_answers: ["True"],
-  },
-  {
-    category: "Science: Computers",
-    type: "multiple",
-    difficulty: "easy",
-    question: "On Twitter, what was the original character limit for a Tweet?",
-    correct_answer: "140",
-    incorrect_answers: ["120", "160", "100"],
-  },
-  {
-    category: "Science: Computers",
-    type: "boolean",
-    difficulty: "hard",
-    question: "DHCP stands for Dynamic Host Configuration Port.",
-    correct_answer: "False",
-    incorrect_answers: ["True"],
-  },
+  }
 ];
 
 //------------------------------------------------// variabili globali
@@ -201,18 +161,19 @@ let domandaRandom = () => {
   timer();
   let rand = Math.floor(Math.random() * questions.length);
   if (!domandeUscite.includes(rand)) {
-    const h1 = document.querySelector("h1"); // mette le risposte in modo casuale
+    const h1 = document.querySelector("h1"); // Domande casuali
     h1.innerHTML = questions[rand].question;
     const risposte = questions[rand].incorrect_answers;
     risposte.push(questions[rand].correct_answer);
+    risposte.sort();//Risposte casuali sui bottoni.
     const bottoneUno = document.getElementById("primo");
     bottoneUno.innerHTML = risposte[3];
     const bottoneDue = document.getElementById("secondo");
-    bottoneDue.innerHTML = risposte[0];
+    bottoneDue.innerHTML = risposte[1];
     const bottoneTre = document.getElementById("terzo");
     bottoneTre.innerHTML = risposte[2];
     const bottoneQuarto = document.getElementById("quarto");
-    bottoneQuarto.innerHTML = risposte[1];
+    bottoneQuarto.innerHTML = risposte[0];
     //--------------------------------rimozione bottoni per due risposte------------------------
     if (bottoni1.innerText === "undefined") {
       //disablita i bottoni se ci sono 2 risposte
