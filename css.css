@@ -348,7 +348,7 @@ h3 {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-block: 40px;
+  margin-block: 25px;
 }
 
 .result {
