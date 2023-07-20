@@ -1,4 +1,4 @@
-const questionsNotFiltered = [
+const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
@@ -733,10 +733,9 @@ const questionsNotFiltered = [
 let testina = document.querySelector("header");
 let principale = document.querySelector("main");
 let piedi = document.querySelector("footer");
+let difficoltaQuestioni = document.querySelector("#difficulty:checked");
 
 const partireConDomande = () => {
-  let difficoltaQuestioni = document.querySelector("#difficulty:checked");
-  let questions = questionsNotFiltered.filter((quest) => quest.difficulty === difficoltaQuestioni.value);
   let numeroQuestioni = document.querySelector("#questionNumber:checked");
   testina.innerHTML = ` <img src="./assets/epicode_logo.png" alt="logoEpicode" />
   <nav class="nav">
