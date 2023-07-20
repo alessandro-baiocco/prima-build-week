@@ -240,10 +240,10 @@ const questions = [
 let testina = document.querySelector("header");
 let principale = document.querySelector("main");
 let piedi = document.querySelector("footer");
-let numeroQuestioni = document.querySelector("#questionNumber:checked");
 let difficoltaQuestioni = document.querySelector("#difficulty:checked");
 
 const partireConDomande = () => {
+  let numeroQuestioni = document.querySelector("#questionNumber:checked");
   testina.innerHTML = ` <img src="./assets/epicode_logo.png" alt="logoEpicode" />
   <nav class="nav">
   <div class="containerTimer">
