@@ -22,6 +22,7 @@ header img {
   width: 155px;
   padding-bottom: 40px;
   display: inline-block;
+  padding: 0;
 }
 
 .mainWelcome {
@@ -80,9 +81,6 @@ h2 {
   font-size: 30px;
   margin-top: 0px;
   margin-bottom: 0;
-}
-h3 {
-  margin-top: 160px;
 }
 
 .pink {
@@ -202,40 +200,47 @@ input:focus {
   text-align: center;
   font-size: 40px;
   line-height: 100%;
-  margin-top: 40px;
+  margin-top: 85px;
+  height: 80px;
 }
 
 .questionButton {
   display: flex;
   justify-content: center;
   margin-inline: 30%;
+  height: 215px;
 }
 
 #primo,
 #secondo,
 #terzo,
 #quarto {
-  padding-block: 20px;
-  padding-inline: 40px;
   margin-left: 40px;
-  margin-bottom: 5px;
-  border-radius: 30px;
+  border-radius: 60px;
   color: white;
   font-size: 20px;
   font-weight: 500;
-  border-top: 3px solid white;
-  border-left: 2px solid white;
+  border-top: 3px outset white;
+  border-bottom: 3px outset rgba(255, 255, 255, 0.445);
+  border-left: 3px solid white;
+  border-right: 3px outset rgba(255, 255, 255, 0.445);
   margin-top: 50px;
+  width: 350px;
+  height: 65px;
+  background-color: rgba(128, 128, 128, 0.151);
 }
+
+#secondo,
+#quarto {
+  margin-top: 18px;
+}
+
 #primo:hover,
 #secondo:hover,
 #terzo:hover,
 #quarto:hover {
-  padding-block: 20px;
-  padding-inline: 40px;
   margin-left: 40px;
-  margin-bottom: 5px;
-  border-radius: 30px;
+  border-radius: 60px;
   color: white;
   font-size: 20px;
   font-weight: 500;
@@ -245,14 +250,20 @@ input:focus {
   background-color: rgb(194, 18, 141);
 }
 
+#secondo:hover,
+#quarto:hover {
+  margin-top: 18px;
+}
+
 h3 {
   text-align: center;
   font-weight: 400;
 }
 
 .nav {
+  display: flex;
+  justify-content: flex-end;
   color: white;
-  display: inline-block;
   margin-left: 415px;
   margin-right: -95px;
 }
@@ -426,7 +437,7 @@ a:visited {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  margin-inline: 120px;
+  margin-inline: 100px;
   box-shadow: 0px 0px 10px 1px #00000044;
   padding-block: 12px;
   padding-inline: 12px;
