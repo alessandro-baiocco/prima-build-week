@@ -197,13 +197,14 @@ input:focus {
   font-size: 40px;
   line-height: 100%;
   margin-top: 120px;
+  height: 80px;
 }
 
 .questionButton {
   display: flex;
   justify-content: center;
   margin-inline: 30%;
-  height: 215px;
+  height: 220px;
 }
 
 #primo,
