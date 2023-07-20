@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;700;800;900&display=swap");
+* {
+  box-sizing: border-box;
+}
 
 body {
   background-image: url(./assets/bg.jpg);
@@ -164,8 +167,9 @@ footer {
 }
 
 input:focus {
-  padding-left: 0;
+  padding-left: 6px;
   color: white;
+  outline: none;
 }
 
 .ovale {
