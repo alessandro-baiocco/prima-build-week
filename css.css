@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;700;800;900&display=swap");
+* {
+  box-sizing: border-box;
+}
 
 body {
   background-image: url(./assets/bg.jpg);
@@ -250,19 +253,16 @@ h3 {
 
 .nav {
   color: white;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: flex-end;
-  align-items: center;
-  position: relative;
+  display: inline-block;
+  margin-left: 415px;
   margin-right: -95px;
 }
 
 .timerSeconds {
-  margin-block: 3px;
+  margin-block: 0px;
   padding: 0;
-  font-size: 10px;
+  font-size: 7px;
+  margin-top: 12px;
 }
 
 .unselected {
@@ -270,14 +270,16 @@ h3 {
 }
 
 .timerRemains {
-  font-size: 10px;
+  font-size: 7px;
+  padding-bottom: 0;
+  margin-bottom: 12px;
 }
 
 #countdown {
-  font-size: 40px;
+  font-size: 35px;
   padding: 0;
   margin-block: 0;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 #primo:disabled,
@@ -315,10 +317,10 @@ h3 {
   display: flex;
   justify-content: center;
   padding: 6%;
-  width: 225px;
-  height: 225px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  margin-inline: 120px;
+  margin-inline: 100px;
   box-shadow: 0px 0px 14px 4px #000000;
 }
 
@@ -337,7 +339,7 @@ h3 {
 .punteggioP {
   display: flex;
   justify-content: center;
-  margin-block: 40px 0;
+  margin-block: 25px 0;
   padding-block: 0;
   font-size: 13px;
 }
@@ -345,7 +347,7 @@ h3 {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-block: 40px 0;
+  margin-block: 30px 0;
   padding-block: 0;
   text-align: center;
 }
@@ -421,12 +423,15 @@ a:visited {
 .containerTimer {
   display: flex;
   justify-content: center;
-  padding: 2%;
-  width: 90px;
-  height: 90px;
+  padding: 3%;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   margin-inline: 120px;
-  box-shadow: 0px 0px 10px 1px #0000008a;
+  box-shadow: 0px 0px 10px 1px #00000044;
+  padding-block: 12px;
+  padding-inline: 12px;
+  line-height: 23px;
 }
 
 .inContainer {
@@ -438,5 +443,5 @@ a:visited {
   background-position: right;
   border-radius: 50%;
   text-align: center;
-  box-shadow: 0px 0px 0px 0px #0000001e, inset 4px 4px 15px 0px #000000, -50px -50px 0px -30px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 0px 0px #0000001e, inset 4px 4px 15px 0px #0000009f;
 }
