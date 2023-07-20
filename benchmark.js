@@ -775,9 +775,9 @@ const timer = () => {
   let percTempo = 100 - (seconds * 100) / 60;
   timerEnorme.innerHTML = `<div class="containerTimer" style = "background-image : conic-gradient(from 0deg at 50% 50%, #8080807c ${percTempo}%, #00ffff ${percTempo}%)" >
   <div class="inContainer">
-    <p class="timerSeconds">Seconds</p>
+    <p class="timerSeconds">SECONDS</p>
     <p id="countdown">${seconds}</p>
-    <p class="timerRemains">Remains</p>
+    <p class="timerRemains">REMAINING</p>
   </div>
 </div>`;
   //-------------------------------------------
