@@ -5,7 +5,7 @@ const linkA = document.querySelector("a");
 scatolaCheck.onchange = function () {
   if (scatolaCheck.checked) {
     bottone.disabled = false;
-    linkA.innerHTML = '<a href="./benchmark.html">PROCEED</a>';
+    linkA.innerHTML = '<a href="./selectDifficulty.html">PROCEED</a>';
   } else {
     bottone.disabled = true;
     linkA.innerHTML = '<a href="">PROCEED</a>';
