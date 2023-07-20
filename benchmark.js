@@ -205,6 +205,7 @@ let domandaRandom = () => {
     h1.innerHTML = questions[rand].question;
     const risposte = questions[rand].incorrect_answers;
     risposte.push(questions[rand].correct_answer);
+    risposte.sort();
     const bottoneUno = document.getElementById("primo");
     bottoneUno.innerHTML = risposte[3];
     const bottoneDue = document.getElementById("secondo");
