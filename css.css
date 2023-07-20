@@ -220,7 +220,7 @@ input:focus {
   border-left: 3px solid white;
   border-right: 3px outset rgba(255, 255, 255, 0.445);
   margin-top: 50px;
-  width: 350px;
+  width: 400px;
   height: 65px;
   background-color: rgba(128, 128, 128, 0.151);
 }
@@ -257,7 +257,7 @@ h3 {
 
 .nav {
   color: white;
-  
+
   float: right;
 }
 
@@ -349,6 +349,7 @@ h3 {
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin-block: 40px;
 }
 
 .result {
