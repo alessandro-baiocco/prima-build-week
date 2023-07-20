@@ -3,9 +3,73 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question: "What does CPU stand for?",
-    correct_answer: "Central Processing Unit",
-    incorrect_answers: ["Central Process Unit", "Computer Personal Unit", "Central Processor Unit"],
+    question: "In any programming language, what is the most common way to iterate through an array?",
+    correct_answer: "&#039;For&#039; loops",
+    incorrect_answers: ["&#039;If&#039; Statements", "&#039;Do-while&#039; loops", "&#039;While&#039; loops"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What does the &quot;MP&quot; stand for in MP3?",
+    correct_answer: "Moving Picture",
+    incorrect_answers: ["Music Player", "Multi Pass", "Micro Point"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "According to the International System of Units, how many bytes are in a kilobyte of RAM?",
+    correct_answer: "1000",
+    incorrect_answers: ["512", "1024", "500"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "When Gmail first launched, how much storage did it provide for your email?",
+    correct_answer: "1GB",
+    incorrect_answers: ["512MB", "5GB", "Unlimited"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What does GHz stand for?",
+    correct_answer: "Gigahertz",
+    incorrect_answers: ["Gigahotz", "Gigahetz", "Gigahatz"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "The programming language &#039;Swift&#039; was created to replace what other programming language?",
+    correct_answer: "Objective-C",
+    incorrect_answers: ["C#", "Ruby", "C++"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "HTML is what type of language?",
+    correct_answer: "Markup Language",
+    incorrect_answers: ["Macro Language", "Programming Language", "Scripting Language"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "Which computer hardware device provides an interface for all other connected devices to communicate?",
+    correct_answer: "Motherboard",
+    incorrect_answers: ["Central Processing Unit", "Hard Disk Drive", "Random Access Memory"],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "easy",
+    question: "Linus Torvalds created Linux and Git.",
+    correct_answer: "True",
+    incorrect_answers: ["False"],
   },
   {
     category: "Science: Computers",
@@ -26,11 +90,15 @@ const questions = [
   },
   {
     category: "Science: Computers",
-    type: "boolean",
+    type: "multiple",
     difficulty: "easy",
-    question: "Pointers were not used in the original C programming language; they were added later on in C++.",
-    correct_answer: "False",
-    incorrect_answers: ["True"],
+    question: "What does the Prt Sc button do?",
+    correct_answer: "Captures what&#039;s on the screen and copies it to your clipboard",
+    incorrect_answers: [
+      "Nothing",
+      "Saves a .png file of what&#039;s on the screen in your screenshots folder in photos",
+      "Closes all windows",
+    ],
   },
   {
     category: "Science: Computers",
@@ -60,7 +128,39 @@ const questions = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question: "On Twitter, what is the character limit for a Tweet?",
+    question: "What is the domain name for the country Tuvalu?",
+    correct_answer: ".tv",
+    incorrect_answers: [".tu", ".tt", ".tl"],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "easy",
+    question: "RAM stands for Random Access Memory.",
+    correct_answer: "True",
+    incorrect_answers: ["False"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "How many kilobytes in one gigabyte (in decimal)?",
+    correct_answer: "1000000",
+    incorrect_answers: ["1024", "1000", "1048576"],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "easy",
+    question: "Ada Lovelace is often considered the first computer programmer.",
+    correct_answer: "True",
+    incorrect_answers: ["False"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "On Twitter, what was the original character limit for a Tweet?",
     correct_answer: "140",
     incorrect_answers: ["120", "160", "100"],
   },
@@ -68,9 +168,57 @@ const questions = [
     category: "Science: Computers",
     type: "boolean",
     difficulty: "easy",
-    question: "Linux was first created as an alternative to Windows XP.",
+    question: "In most programming languages, the operator ++ is equivalent to the statement &quot;+= 1&quot;.",
+    correct_answer: "True",
+    incorrect_answers: ["False"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "Which computer language would you associate Django framework with?",
+    correct_answer: "Python",
+    incorrect_answers: ["C#", "C++", "Java"],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "easy",
+    question: "Time on Computers is measured via the EPOX System.",
     correct_answer: "False",
     incorrect_answers: ["True"],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "easy",
+    question: "The Windows 7 operating system has six main editions.",
+    correct_answer: "True",
+    incorrect_answers: ["False"],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "easy",
+    question: "The Windows ME operating system was released in the year 2000.",
+    correct_answer: "True",
+    incorrect_answers: ["False"],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "easy",
+    question: "The NVidia GTX 1080 gets its name because it can only render at a 1920x1080 screen resolution.",
+    correct_answer: "False",
+    incorrect_answers: ["True"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "How many values can a single byte represent?",
+    correct_answer: "256",
+    incorrect_answers: ["8", "1", "1024"],
   },
   {
     category: "Science: Computers",
@@ -87,47 +235,7 @@ const questions = [
     question: "What is the domain name for the country Tuvalu?",
     correct_answer: ".tv",
     incorrect_answers: [".tu", ".tt", ".tl"],
-  },
-  {
-    category: "Science: Computers",
-    type: "multiple",
-    difficulty: "medium",
-    question: "Which one of these is not an official development name for a Ubuntu release?",
-    correct_answer: "Mystic Mansion",
-    incorrect_answers: ["Trusty Tahr", "Utopic Unicorn", "Wily Werewolf"],
-  },
-  {
-    category: "Science: Computers",
-    type: "multiple",
-    difficulty: "medium",
-    question: "In the server hosting industry IaaS stands for...",
-    correct_answer: "Infrastructure as a Service",
-    incorrect_answers: ["Internet as a Service", "Internet and a Server", "Infrastructure as a Server"],
-  },
-  {
-    category: "Science: Computers",
-    type: "boolean",
-    difficulty: "medium",
-    question: "The open source program Redis is a relational database server.",
-    correct_answer: "False",
-    incorrect_answers: ["True"],
-  },
-  {
-    category: "Science: Computers",
-    type: "multiple",
-    difficulty: "easy",
-    question: "On Twitter, what was the original character limit for a Tweet?",
-    correct_answer: "140",
-    incorrect_answers: ["120", "160", "100"],
-  },
-  {
-    category: "Science: Computers",
-    type: "boolean",
-    difficulty: "hard",
-    question: "DHCP stands for Dynamic Host Configuration Port.",
-    correct_answer: "False",
-    incorrect_answers: ["True"],
-  },
+  }
 ];
 
 //------------------------------------------------// variabili globali
@@ -201,18 +309,19 @@ let domandaRandom = () => {
   timer();
   let rand = Math.floor(Math.random() * questions.length);
   if (!domandeUscite.includes(rand)) {
-    const h1 = document.querySelector("h1"); // mette le risposte in modo casuale
+    const h1 = document.querySelector("h1"); // Domande casuali
     h1.innerHTML = questions[rand].question;
     const risposte = questions[rand].incorrect_answers;
     risposte.push(questions[rand].correct_answer);
+    risposte.sort();//Risposte casuali sui bottoni.
     const bottoneUno = document.getElementById("primo");
     bottoneUno.innerHTML = risposte[3];
     const bottoneDue = document.getElementById("secondo");
-    bottoneDue.innerHTML = risposte[0];
+    bottoneDue.innerHTML = risposte[1];
     const bottoneTre = document.getElementById("terzo");
     bottoneTre.innerHTML = risposte[2];
     const bottoneQuarto = document.getElementById("quarto");
-    bottoneQuarto.innerHTML = risposte[1];
+    bottoneQuarto.innerHTML = risposte[0];
     //--------------------------------rimozione bottoni per due risposte------------------------
     if (bottoni1.innerText === "undefined") {
       //disablita i bottoni se ci sono 2 risposte
