@@ -167,7 +167,7 @@ const partireConDomande = () => {
           inPunteggio.append(punteggioP);
         } else {
           punteggioH4.innerHTML = `Unlucky! <span class="red">You didn't pass the exam`;
-          punteggioP.innerHTML = `STUDY MORE (idiot) <br />and try next time`;
+          punteggioP.innerHTML = `STUDY MORE<br />and try next time`;
           inPunteggio.append(punteggioH4);
           inPunteggio.append(punteggioP);
         }
