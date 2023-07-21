@@ -76,12 +76,10 @@ const partireConDomande = () => {
         risposteGiuste += 1;
         clearInterval();
         domandaRandom();
-        console.log("giuste", risposteGiuste);
       } else {
         risposteSbagliate++;
         clearInterval();
         domandaRandom();
-        console.log("sbagliato", risposteSbagliate);
       }
     });
   });
@@ -175,7 +173,6 @@ const partireConDomande = () => {
       questNumber.innerText = numberQuest;
     } else {
       domandaRandom();
-      console.log("duplicato");
     }
   };
   domandaRandom(); // richiamata
