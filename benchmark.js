@@ -28,7 +28,6 @@ const partireConDomande = () => {
   </div>
   </div>`;
   piedi.innerHTML = `<h3>QUESTION <span id="changingNumber"></span> <span class="pink"> / ${numeroQuestioni.value}</span></h3>`;
-  //-----------------------------------------------
   //------------------------------------------------// variabili globali
   const timerEnorme = document.querySelector(".nav");
   let tempo = 60;
@@ -59,12 +58,12 @@ const partireConDomande = () => {
     </div>
     </div>`;
     //-------------------------------------------
-    tempo--;
-    if (tempo === -2) {
+    if (tempo < 0) {
       risposteSbagliate++;
       tempo = 60;
       domandaRandom();
     }
+    tempo--;
   };
   const intervallo = setInterval(timer, 1000);
 
@@ -73,11 +72,9 @@ const partireConDomande = () => {
     button.addEventListener("click", () => {
       if (risposteCollection.includes(bottoniTutti[index1].innerHTML)) {
         risposteGiuste += 1;
-        clearInterval();
         domandaRandom();
       } else {
         risposteSbagliate++;
-        clearInterval();
         domandaRandom();
       }
     });
