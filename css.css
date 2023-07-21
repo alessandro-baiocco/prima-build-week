@@ -376,17 +376,19 @@ h3 {
 
 .correct {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
-  padding-top: 50px;
   line-height: 1;
 }
 .wrong {
-  display: inline;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: right;
-  padding-top: 50px;
   line-height: 1;
 }
-
 .grosso {
   margin-bottom: 0;
   font-size: 55px;
@@ -450,8 +452,7 @@ fieldset {
   display: flex;
   justify-content: space-between;
   width: 600px;
-  border: 2px ridge #4e1c65;
-  box-shadow: -13px 5px 13px 3px #4e1c65;
+
 }
 
 fieldset legend {
