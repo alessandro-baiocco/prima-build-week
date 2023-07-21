@@ -125,8 +125,7 @@ const partireConDomande = () => {
         let percSbagliate = (risposteSbagliate * 100) / parseInt(numeroQuestioni.value);
         let percGiuste = (risposteGiuste * 100) / parseInt(numeroQuestioni.value);
 
-        console.log("dopo", numberQuest);
-        clearInterval(timer);
+        clearInterval(intervallo);
         testina.innerHTML = `<img class="resultLogo" src="./assets/epicode_logo.png" alt="logo" />
       <p class="resultH1">Results</p>
       <p class="resultH2">The summary of your answer:</p>`;
@@ -176,6 +175,7 @@ const partireConDomande = () => {
       questNumber.innerText = numberQuest;
     } else {
       domandaRandom();
+      console.log("duplicato");
     }
   };
   domandaRandom(); // richiamata
