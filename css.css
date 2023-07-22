@@ -364,7 +364,7 @@ h3 {
   display: flex;
   justify-content: center;
   margin-inline: auto;
-  margin-top: 40px;
+  margin-block: 40px;
 }
 .resultButton {
   padding-block: 16px;
@@ -493,4 +493,32 @@ label {
   padding-inline: 50px;
   box-shadow: 0px 0px 13px 3px #00ffff;
   cursor: pointer;
+}
+
+aside {
+  font-size: 25px;
+}
+.appendinoDomande {
+  border-top: 5px solid white;
+  border-radius: 10% 10% 10% 10% / 30% 30% 30% 30%;
+}
+.appendinoRisposte {
+  margin-block: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.appendiRisposta {
+  padding: 10px;
+  background-color: rgba(0, 255, 255, 0.283);
+  display: inline-block;
+  border: solid 2px white;
+  border-radius: 10% 10% 10% 10% / 40% 40% 40% 40%;
+}
+
+.rispostaErrata {
+  padding: 10px;
+  background-color: rgb(194, 18, 141);
+  display: inline-block;
+  border: solid 2px white;
+  border-radius: 10% 10% 10% 10% / 40% 40% 40% 40%;
 }

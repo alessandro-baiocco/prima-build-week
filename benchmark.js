@@ -1,6 +1,8 @@
 let testina = document.querySelector("header");
 let principale = document.querySelector("main");
 let piedi = document.querySelector("footer");
+let lato = document.querySelector("aside");
+let domandeSelezionateErrate = [];
 
 const partireConDomande = () => {
   let difficoltaQuestioni = document.querySelector("#difficulty:checked");
@@ -30,6 +32,8 @@ const partireConDomande = () => {
   piedi.innerHTML = `<h3>QUESTION <span id="changingNumber"></span> <span class="pink"> / ${numeroQuestioni.value}</span></h3>`;
   //------------------------------------------------// variabili globali
   const timerEnorme = document.querySelector(".nav");
+  rand = 0;
+
   let tempo = 60;
   let numberQuest = 0;
   const questNumber = document.getElementById("changingNumber");
@@ -60,6 +64,8 @@ const partireConDomande = () => {
     //-------------------------------------------
     if (tempo < 0) {
       risposteSbagliate++;
+      domandeSelezionateErrate.push(questions[rand]);
+      console.log(domandeSelezionateErrate);
       tempo = 60;
       domandaRandom();
     }
@@ -68,6 +74,7 @@ const partireConDomande = () => {
   const intervallo = setInterval(timer, 1000);
 
   // per aggiungere la classe al bottone ----------------------------------------
+  //--------------------------------push domanda sbagliata-------------------------
   bottoniTutti.forEach((button, index1) => {
     button.addEventListener("click", () => {
       if (risposteCollection.includes(bottoniTutti[index1].innerHTML)) {
@@ -76,15 +83,17 @@ const partireConDomande = () => {
       } else {
         risposteSbagliate++;
         domandaRandom();
+        domandeSelezionateErrate.push(questions[rand]);
+        console.log(domandeSelezionateErrate);
       }
     });
   });
 
-  //-------------------------------------------------------
+  //-------------------------------------------------------------
   let domandaRandom = () => {
     tempo = 60;
     timer();
-    let rand = Math.floor(Math.random() * questions.length);
+    rand = Math.floor(Math.random() * questions.length);
 
     const h1 = document.querySelector("h1"); // mette le risposte in modo casuale
     h1.innerHTML = questions[rand].question;
@@ -162,6 +171,25 @@ const partireConDomande = () => {
         punteggioP.innerHTML = `STUDY MORE (idiot) <br />and try next time`;
         inPunteggio.append(punteggioH4);
         inPunteggio.append(punteggioP);
+      }
+      for (let i = 0; i < domandeSelezionateErrate.length; i++) {
+        const appendinoDomandeSu = document.createElement("div");
+        appendinoDomandeSu.innerHTML = `${domandeSelezionateErrate[i].question}`;
+        appendinoDomandeSu.classList.add("appendinoDomande");
+        lato.appendChild(appendinoDomandeSu);
+        const appendinoRisposte = document.createElement("div");
+        appendinoRisposte.classList.add("appendinoRisposte");
+        lato.appendChild(appendinoRisposte);
+        const appendinoRispostaGiusta = document.createElement("div");
+        appendinoRispostaGiusta.innerHTML = `${domandeSelezionateErrate[i].correct_answer} ✔`;
+        appendinoRispostaGiusta.classList.add("appendiRisposta");
+        appendinoRisposte.appendChild(appendinoRispostaGiusta);
+        for (let j = 0; j < domandeSelezionateErrate[i].incorrect_answers.length; j++) {
+          const appendinoRisposteErrate = document.createElement("div");
+          appendinoRisposteErrate.innerHTML = `${domandeSelezionateErrate[i].incorrect_answers[j]} ×`;
+          appendinoRisposteErrate.classList.add("rispostaErrata");
+          appendinoRisposte.appendChild(appendinoRisposteErrate);
+        }
       }
     }
     numberQuest++;
